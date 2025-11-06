@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wikimedia Chile - Inicio</title>
+    
+    <!-- Tailwind CSS --><script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter --><link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Degradado oscuro para la imagen principal (hero) */
+        .hero-overlay::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.2) 40%, rgba(0, 0, 0, 0) 100%);
+            z-index: 1;
+        }
+
+        /* Estilos de las tarjetas de noticias */
+        .news-card-image {
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+        }
+
+        /* Estilos de la cuadrícula de Instagram */
+        .instagram-grid a {
+            aspect-ratio: 1 / 1;
+        }
+        .instagram-grid img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* Animación de scroll para logos de alianzas */
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+        .animate-scroll {
+            display: flex;
+            width: max-content;
+            animation: scroll 40s linear infinite;
+        }
+        
+        /* --- Estilos del Header --- */
+        #main-header {
+            transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, color 0.3s ease-in-out;
+            color: white;
+            /* Fondo oscuro sutil para legibilidad inicial, SIN BLUR */
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+        /* Links del header en estado transparente (sobre el hero) */
+        #main-header .nav-link {
+            color: white;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+            transition: color 0.3s ease;
+        }
+         #main-header .nav-link:hover {
+            color: #d1d5db; /* gray-300 */
+         }
+        /* Botón "Hazte Socio" (transparente) */
+        #main-header .cta-socio {
+            background-color: transparent;
+            border: 2px solid white;
+            color: white;
+            transition: all 0.3s ease-in-out;
+            font-weight: 600; /* semibold */
+        }
+        #main-header .cta-socio:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        /* Botón "Donar" (transparente) - CORREGIDO */
+        #main-header .cta-donar {
+            background-color: transparent;
+            border: 2px solid white;
+            color: white;
+            transition: all 0.3s ease-in-out;
+            font-weight: 600; /* semibold */
+        }
+        #main-header .cta-donar:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        /* --- Estilos del Header al hacer scroll --- */
+        #main-header.header-scrolled {
+            background-color: rgba(255, 255, 255, 0.9); /* bg-white/90 */
+            color: #4B5563; /* text-gray-600 */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            /* BLUR AÑADIDO SOLO AL HACER SCROLL */
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+        /* Links del header en estado sólido (scroll) */
+        #main-header.header-scrolled .nav-link {
+            color: #4B5563; /* text-gray-600 */
+            text-shadow: none;
+        }
+        #main-header.header-scrolled .nav-link:hover {
+            color: #2563EB; /* text-blue-600 */
+        }
+        /* Botón "Hazte Socio" (sólido) */
+        #main-header.header-scrolled .cta-socio {
+            background-color: transparent;
+            border-color: #E5E7EB; /* gray-200 */
+            color: #2563EB; /* text-blue-600 */
+            font-weight: 600; /* semibold */
+        }
+        #main-header.header-scrolled .cta-socio:hover {
+            background-color: #F3F4F6; /* bg-gray-100 */
+        }
+         /* Botón "Donar" (sólido) - CORREGIDO */
+         #main-header.header-scrolled .cta-donar {
+            background-color: #2563EB; /* text-blue-600 */
+            color: white;
+            border-color: #2563EB;
+            font-weight: 600; /* semibold */
+        }
+        #main-header.header-scrolled .cta-donar:hover {
+            background-color: #1D4ED8; /* text-blue-700 */
+            border-color: #1D4ED8;
+        }
+        
+        /* --- Utilidades de Scrollbar --- */
+        /* Oculta el scrollbar en todos los navegadores */
+        .hide-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none; /* Chrome, Safari y Opera */
+        }
+
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- ===== HEADER ===== --><header id="main-header" class="fixed top-0 left-0 right-0 z-50">
+        <!-- Espaciado aumentado a px-6 lg:px-8 py-5 --><nav class="container mx-auto px-6 lg:px-8 py-5">
+            <div class="flex justify-between items-center">
+                <!-- Logo --><div class="flex-1 flex justify-start">
+                    <a href="index.html" class="flex items-center gap-2 cursor-pointer">
+                        <!-- Logo siempre negro --><img src="/wikiemdia foundation logo.webp" 
+                             alt="Wikimedia Chile Logo" 
+                             id="header-logo"
+                             class="h-9 w-auto"
+                             onerror="this.onerror=null;this.src='https://placehold.co/120x36/333/fff?text=WM+Chile';">
+                    </a>
+                </div>
+                
+                <!-- Navegación Principal (Desktop) --><div class="hidden lg:flex flex-1 justify-center items-center gap-8"> <!-- Gap reducido a 8 -->
+                    <a href="sobre-nosotros.html" class="nav-link font-medium">Sobre Nosotros</a>
+                    <a href="programas.html" class="nav-link font-medium">Programas</a>
+                    <a href="noticias.html" class="nav-link font-medium">Noticias</a>
+                    <a href="agenda.html" class="nav-link font-medium">Agenda</a>
+                    <button id="search-button-desktop" class="nav-link" aria-label="Abrir búsqueda">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    </button>
+                </div>
+
+                <!-- Botones CTA (Desktop) --><div class="hidden lg:flex flex-1 justify-end items-center gap-3">
+                    <a href="hazte-socio.html" class="cta-socio rounded-lg text-sm px-5 py-2.5">Hazte Socio/a</a>
+                    <a href="donar.html" class="cta-donar rounded-lg text-sm px-5 py-2.5">Donar</a>
+                </div>
+
+                <!-- Botones (Mobile) --><div class="lg:hidden flex flex-1 justify-end items-center gap-2">
+                    <button id="search-button-mobile" class="nav-link p-2" aria-label="Abrir búsqueda">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    </button>
+                    <button id="mobile-menu-button" class="nav-link p-2" aria-label="Abrir menú">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+        
+        <!-- Menú Desplegable (Mobile) --><div id="mobile-menu" class="hidden lg:hidden fixed inset-0 bg-white z-50 p-6">
+            <div class="flex justify-between items-center mb-8">
+                <img src="/wikiemdia foundation logo.webp" 
+                     alt="Wikimedia Chile Logo" 
+                     class="h-9 w-auto"
+                     onerror="this.onerror=null;this.src='https://placehold.co/120x36/333/fff?text=WM+Chile';">
+                <button id="close-mobile-menu" class="text-gray-700 p-2" aria-label="Cerrar menú">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+            </div>
+            <div class="flex flex-col gap-5">
+                <a href="index.html" class="block text-xl text-blue-600 font-semibold py-2">Inicio</a>
+                <a href="sobre-nosotros.html" class="block text-xl text-gray-700 hover:text-blue-600 font-medium py-2">Sobre Nosotros</a>
+                <a href="programas.html" class="block text-xl text-gray-700 hover:text-blue-600 font-medium py-2">Programas</a>
+                <a href="noticias.html" class="block text-xl text-gray-700 hover:text-blue-600 font-medium py-2">Noticias</a>
+                <a href="agenda.html" class="block text-xl text-gray-700 hover:text-blue-600 font-medium py-2">Agenda</a>
+                
+                <hr class="my-4">
+                
+                <a href="hazte-socio.html" class="text-white bg-blue-600 hover:bg-blue-700 font-medium rounded-lg text-base px-5 py-3 text-center transition-colors">Hazte Socio/a</a>
+                <a href="donar.html" class="text-gray-700 bg-gray-100 hover:bg-gray-200 font-medium rounded-lg text-base px-5 py-3 text-center transition-colors">Donar</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== MODAL DE BÚSQUEDA ===== --><div id="search-modal" class="hidden fixed inset-0 bg-black/70 z-50 flex items-start justify-center pt-20 md:pt-32 p-4">
+        <div class="bg-white rounded-xl shadow-2xl w-full max-w-2xl relative" id="search-modal-content">
+            <button id="close-search-modal" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600" aria-label="Cerrar búsqueda">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+            <div class="p-6">
+                <label for="search-input" class="text-lg font-medium text-gray-800 mb-3 block">Buscar en Wikimedia Chile</label>
+                <div class="flex gap-2">
+                    <input type="text" id="search-input" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Ej: memorias, programas, etc.">
+                    <button class="text-white bg-blue-600 hover:bg-blue-700 font-medium rounded-lg px-5 py-3 transition-colors" aria-label="Buscar">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- ===== CONTENIDO PRINCIPAL ===== --><main>
+
+        <!-- Esta es la única sección de contenido en index.html --><div id="page-home" class="page-content">
+            
+            <!-- ===== SECCIÓN HERO ===== --><section class="relative h-[85vh] min-h-[600px] flex items-center justify-center text-white text-center">
+                <!-- Imagen de fondo --><img src="/background.jpg"
+                     alt="Imagen de fondo de Wikimedia Chile"
+                     class="absolute inset-0 w-full h-full object-cover"
+                     onerror="this.onerror=null;this.src='https://placehold.co/1920x1080/333/fff?text=Fondo+no+disponible';this.alt='Error al cargar imagen de fondo';">
+                
+                <!-- Overlay para oscurecer la imagen --><div class="hero-overlay"></div>
+                
+                <!-- Contenido del Hero --><div class="container mx-auto px-4 lg:px-6 relative z-10">
+                    <!-- Contenedor del texto SIN BLUR y SIN FONDO --><div class="max-w-4xl mx-auto p-4"> <!-- Fondo de texto eliminado --><h1 class="text-4xl sm:text-5xl lg:text-7xl font-extrabold leading-snug tracking-tight drop-shadow-lg"> <!-- leading-snug y drop-shadow-lg añadidos -->
+                            Construyendo un mundo donde el <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-blue-500">conocimiento</span> es libre para todos.
+                        </h1>
+                        <p class="mt-6 text-lg md:text-xl text-gray-200 max-w-3xl mx-auto drop-shadow-md"> <!-- drop-shadow-md añadido -->
+                            Somos el capítulo local de la Fundación Wikimedia, promoviendo el conocimiento libre y la cultura abierta en Chile.
+                        </p>
+                    </div>
+                    <span class="block mt-4 text-xs text-gray-300 drop-shadow-md">Foto: Rosa Angelini Figueroa, Wiki Advocacy Meet Up 2024, CC BY SA 4.0</span>
+                </div>
+            </section>
+            
+            <!-- ===== SECCIÓN INVOLÚCRATE (CTA) - REDISEÑADA Y MEJORADA ===== --><section class="bg-gradient-to-br from-blue-50 to-indigo-100 py-16 md:py-28">
+                <div class="container mx-auto px-4 lg:px-8">
+                    <div class="text-center mb-16 max-w-4xl mx-auto">
+                        <h2 class="text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight">Tu Energía Transforma: <br class="hidden sm:inline">¡Involúcrate con Wikimedia Chile!</h2>
+                        <p class="mt-6 text-lg md:text-xl text-gray-700 max-w-3xl mx-auto">
+                            Descubre cómo puedes ser parte activa de nuestra comunidad y misión.
+                        </p>
+                    </div>
+                    <!-- justify-items-center añadido para centrar las tarjetas si no ocupan todo el espacio -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 xl:gap-12 justify-items-center">
+                        
+                        <!-- Card: Hazte Socio/a (max-w-sm añadido) --><a href="hazte-socio.html" class="group relative block w-full max-w-sm rounded-2xl bg-white p-6 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-blue-100 hover:border-blue-300">
+                            <div class="flex items-start gap-4 mb-5">
+                                <div class="flex-shrink-0 w-16 h-16 bg-blue-500 text-white rounded-full flex items-center justify-center text-3xl shadow-lg group-hover:bg-blue-600 transition-colors">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87c-.5-.07-1-.31-1.4-.62"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                                </div>
+                                <h3 class="flex-1 text-2xl font-bold text-gray-900 group-hover:text-blue-700 transition-colors leading-snug pt-2">
+                                    Conviértete en Socio/a
+                                </h3>
+                            </div>
+                            <p class="text-gray-600 text-base mb-6 leading-relaxed">
+                                Únete a nuestra red de colaboradores y amplifica el impacto del conocimiento libre.
+                            </p>
+                            <div class="inline-flex items-center gap-2 text-blue-600 font-semibold text-lg group-hover:text-blue-800 transition-colors">
+                                Explora Beneficios 
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="transform translate-x-0 group-hover:translate-x-1 transition-transform duration-300"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                            </div>
+                        </a>
+
+                        <!-- Card: Donar (max-w-sm añadido) --><a href="donar.html" class="group relative block w-full max-w-sm rounded-2xl bg-white p-6 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-red-100 hover:border-red-300">
+                            <div class="flex items-start gap-4 mb-5">
+                                <div class="flex-shrink-0 w-16 h-16 bg-red-500 text-white rounded-full flex items-center justify-center text-3xl shadow-lg group-hover:bg-red-600 transition-colors">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v.217C7.47 5.787 6.45 6.88 6 8a3 3 0 0 0-2 2.82V14a2 2 0 0 0 2 2h2v4a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-4h2a2 2 0 0 0 2-2v-3.18a3 3 0 0 0-2-2.82c-.45-1.12-1.47-2.213-3-2.783V5a3 3 0 0 0-3-3z"></path></svg>
+                                </div>
+                                <h3 class="flex-1 text-2xl font-bold text-gray-900 group-hover:text-red-700 transition-colors leading-snug pt-2">
+                                    Realiza una Donación
+                                </h3>
+                            </div>
+                            <p class="text-gray-600 text-base mb-6 leading-relaxed">
+                                Cada contribución impulsa nuestros proyectos de educación y acceso al conocimiento.
+                            </p>
+                            <div class="inline-flex items-center gap-2 text-red-600 font-semibold text-lg group-hover:text-red-800 transition-colors">
+                                Apoya nuestra Misión 
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="transform translate-x-0 group-hover:translate-x-1 transition-transform duration-300"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                            </div>
+                        </a>
+
+                        <!-- Card: Suscríbete (max-w-sm añadido) --><a href="#footer-subscribe" class="group relative block w-full max-w-sm rounded-2xl bg-white p-6 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-teal-100 hover:border-teal-300">
+                            <div class="flex items-start gap-4 mb-5">
+                                <div class="flex-shrink-0 w-16 h-16 bg-teal-500 text-white rounded-full flex items-center justify-center text-3xl shadow-lg group-hover:bg-teal-600 transition-colors">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+                                </div>
+                                <h3 class="flex-1 text-2xl font-bold text-gray-900 group-hover:text-teal-700 transition-colors leading-snug pt-2">
+                                    Suscríbete al Boletín
+                                </h3>
+                            </div>
+                            <p class="text-gray-600 text-base mb-6 leading-relaxed">
+                                Recibe las últimas noticias y eventos directamente en tu correo electrónico.
+                            </p>
+                            <div class="inline-flex items-center gap-2 text-teal-600 font-semibold text-lg group-hover:text-teal-800 transition-colors">
+                                Mantente Informado 
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="transform translate-x-0 group-hover:translate-x-1 transition-transform duration-300"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                            </div>
+                        </a>
+
+                    </div>
+                </div>
+            </section>
+            
+            <!-- ===== SECCIÓN AGENDA (CARRUSEL) - HEADER REDISEÑADO ===== --><section class="py-16 md:py-24 bg-white">
+                <div class="container mx-auto px-4 lg:px-6">
+                    <div class="flex flex-col lg:flex-row justify-between lg:items-end gap-8 mb-12">
+                        <div class="flex-1 text-center lg:text-left">
+                            <span class="text-sm font-semibold text-blue-600 uppercase tracking-wider">Agenda</span>
+                            <h2 class="text-4xl lg:text-5xl font-extrabold text-gray-900 mt-1">Próximos Eventos</h2>
+                            <p class="mt-4 text-xl text-gray-600 max-w-2xl">Participa en nuestros próximos eventos y talleres.</p>
+                        </div>
+                        <div class="flex-shrink-0">
+                            <a href="agenda.html" class="text-white bg-blue-600 hover:bg-blue-700 font-medium rounded-lg text-base px-6 py-3 transition-all duration-300 shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 hover:-translate-y-0.5 transform">
+                                Ver agenda completa
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Contenedor del Carrusel de Agenda --><div id="agenda-carousel" class="flex overflow-x-auto gap-6 pb-6 hide-scrollbar" style="scroll-snap-type: x mandatory; scroll-behavior: smooth;">
+                        
+                        <!-- Tarjeta de Evento 1 --><article class="flex-shrink-0 w-72 md:w-80 bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 group" style="scroll-snap-align: start;">
+                            <div class="p-4">
+                                <div class="flex justify-between items-center text-xs mb-2">
+                                    <span class="font-bold text-gray-700 bg-gray-100 px-2 py-0.5 rounded">COLUMNA</span>
+                                    <span class="text-gray-500">17 OCT 2025</span>
+                                </div>
+                            </div>
+                            <div class="relative overflow-hidden">
+                                <img src="https://placehold.co/400x250/F8E5B1/333?text=Envejecer" class="h-40 w-full object-cover group-hover:scale-105 transition-transform duration-300" alt="Envejecer en un mundo hiperconectado">
+                                <div class="absolute bottom-2 left-2 bg-black/70 text-white px-2 py-0.5 rounded">
+                                    <span class="text-xl font-bold">25</span>
+                                    <span class="text-sm font-bold">OCT</span>
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <a href="#" class="block text-lg font-bold text-gray-900 mb-3 h-16 hover:text-blue-600 transition-colors leading-tight">Envejecer en un mundo hiperconectado</a>
+                                <div class="space-y-1 text-gray-600 text-xs">
+                                    <div class="flex items-center gap-1.5">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="text-gray-400" viewBox="0 0 16 16"><path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/><path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"/></svg>
+                                        <span>25 oct</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        
+                        <!-- Tarjeta de Evento 2 --><article class="flex-shrink-0 w-72 md:w-80 bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 group" style="scroll-snap-align: start;">
+                            <div class="p-4">
+                                <div class="flex justify-between items-center text-xs mb-2">
+                                    <span class="font-bold text-gray-700 bg-gray-100 px-2 py-0.5 rounded">CONFERENCIA</span>
+                                    <span class="text-gray-500">10 OCT 2025</span>
+                                </div>
+                            </div>
+                            <div class="relative overflow-hidden">
+                                <img src="https://placehold.co/400x250/C6B9F2/333?text=WIC+2024" class="h-40 w-full object-cover group-hover:scale-105 transition-transform duration-300" alt="IA: Escritura 2024: Women in Computing">
+                                <div class="absolute bottom-2 left-2 bg-black/70 text-white px-2 py-0.5 rounded">
+                                    <span class="text-xl font-bold">29</span>
+                                    <span class="text-sm font-bold">NOV</span>
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <a href="#" class="block text-lg font-bold text-gray-900 mb-3 h-16 hover:text-blue-600 transition-colors leading-tight">IA: Escritura 2024: Women in Computing</a>
+                                <div class="space-y-1 text-gray-600 text-xs">
+                                    <div class="flex items-center gap-1.5">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="text-gray-400" viewBox="0 0 16 16"><path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/><path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"/></svg>
+                                        <span>29 nov</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        
+                        <!-- Tarjeta de Evento 3 --><article class="flex-shrink-0 w-72 md:w-80 bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 group" style="scroll-snap-align: start;">
+                            <div class="p-4">
+                                <div class="flex justify-between items-center text-xs mb-2">
+                                    <span class="font-bold text-gray-700 bg-gray-100 px-2 py-0.5 rounded">TALLER</span>
+                                    <span class="text-gray-500">02 OCT 2025</span>
+                                </div>
+                            </div>
+                            <div class="relative overflow-hidden">
+                                <img src="https://placehold.co/400x250/F2B9D4/333?text=Talento+IA" class="h-40 w-full object-cover group-hover:scale-105 transition-transform duration-300" alt="Talento Humano en IA">
+                                <div class="absolute bottom-2 left-2 bg-black/70 text-white px-2 py-0.5 rounded">
+                                    <span class="text-xl font-bold">6</span>
+                                    <span class="text-sm font-bold">DIC</span>
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <a href="#" class="block text-lg font-bold text-gray-900 mb-3 h-16 hover:text-blue-600 transition-colors leading-tight">Talento Humano en IA: Inteligencia Artificial</a>
+                                <div class="space-y-1 text-gray-600 text-xs">
+                                    <div class="flex items-center gap-1.5">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="text-gray-400" viewBox="0 0 16 16"><path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/><path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"/></svg>
+                                        <span>6 dic</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Tarjeta de Evento 4 --><article class="flex-shrink-0 w-72 md:w-80 bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 group" style="scroll-snap-align: start;">
+                            <div class="p-4">
+                                <div class="flex justify-between items-center text-xs mb-2">
+                                    <span class="font-bold text-gray-700 bg-gray-100 px-2 py-0.5 rounded">COLUMNA</span>
+                                    <span class="text-gray-500">28 SEP 2025</span>
+                                </div>
+                            </div>
+                            <div class="relative overflow-hidden">
+                                <img src="https://placehold.co/400x250/B9F2D8/333?text=Filtraciones" class="h-40 w-full object-cover group-hover:scale-105 transition-transform duration-300" alt="Filtraciones de datos">
+                                <div class="absolute bottom-2 left-2 bg-black/70 text-white px-2 py-0.5 rounded">
+                                    <span class="text-xl font-bold">16</span>
+                                    <span class="text-sm font-bold">DIC</span>
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <a href="#" class="block text-lg font-bold text-gray-900 mb-3 h-16 hover:text-blue-600 transition-colors leading-tight">Filtraciones de datos: el costo ciudadano</a>
+                                <div class="space-y-1 text-gray-600 text-xs">
+                                    <div class="flex items-center gap-1.5">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="text-gray-400" viewBox="0 0 16 16"><path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/><path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"/></svg>
+                                        <span>16 dic</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Tarjeta de Evento 5 --><article class="flex-shrink-0 w-72 md:w-80 bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 group" style="scroll-snap-align: start;">
+                            <div class="p-4">
+                                <div class="flex justify-between items-center text-xs mb-2">
+                                    <span class="font-bold text-gray-700 bg-gray-100 px-2 py-0.5 rounded">EVENTO</span>
+                                    <span class="text-gray-500">15 SEP 2025</span>
+                                </div>
+                            </div>
+                            <div class="relative overflow-hidden">
+                                <img src="https://placehold.co/400x250/FFDDC1/333?text=Editatón" class="h-40 w-full object-cover group-hover:scale-105 transition-transform duration-300" alt="Editatón de cierre de año">
+                                <div class="absolute bottom-2 left-2 bg-black/70 text-white px-2 py-0.5 rounded">
+                                    <span class="text-xl font-bold">22</span>
+                                    <span class="text-sm font-bold">DIC</span>
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <a href="#" class="block text-lg font-bold text-gray-900 mb-3 h-16 hover:text-blue-600 transition-colors leading-tight">Editatón de cierre de año</a>
+                                <div class="space-y-1 text-gray-600 text-xs">
+                                    <div class="flex items-center gap-1.5">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="text-gray-400" viewBox="0 0 16 16"><path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/><path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"/></svg>
+                                        <span>22 dic</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <!-- Botones de carrusel movidos aquí --><div class="flex justify-center items-center gap-4 mt-8">
+                        <button class="agenda-prev bg-white border border-gray-300 rounded-full p-3 text-gray-600 hover:bg-gray-100 hover:text-blue-600 transition-all shadow-sm active:scale-95" aria-label="Evento anterior">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" /></svg>
+                        </button>
+                        <button class="agenda-next bg-white border border-gray-300 rounded-full p-3 text-gray-600 hover:bg-gray-100 hover:text-blue-600 transition-all shadow-sm active:scale-95" aria-label="Siguiente evento">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== SECCIÓN NOTICIAS (CARRUSEL) - HEADER REDISEÑADO ===== --><section class="py-16 md:py-24 bg-gray-50">
+                <div class="container mx-auto px-4 lg:px-6">
+                    <div class="flex flex-col lg:flex-row justify-between lg:items-end gap-8 mb-12">
+                        <div class="flex-1 text-center lg:text-left">
+                            <span class="text-sm font-semibold text-gray-700 uppercase tracking-wider">Blog</span>
+                            <h2 class="text-4xl lg:text-5xl font-extrabold text-gray-900 mt-1">Últimas Noticias</h2>
+                            <p class="mt-4 text-xl text-gray-600 max-w-2xl">Entérate de nuestras novedades, hitos y actividades.</p>
+                        </div>
+                        <div class="flex-shrink-0">
+                             <a href="noticias.html" class="text-white bg-gray-800 hover:bg-gray-900 font-medium rounded-lg text-base px-6 py-3 transition-all duration-300 shadow-lg shadow-gray-800/30 hover:shadow-gray-800/50 hover:-translate-y-0.5 transform">
+                                Ver todas las noticias
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Contenedor del Carrusel de Noticias --><div id="news-carousel" class="flex overflow-x-auto gap-6 pb-6 hide-scrollbar" style="scroll-snap-type: x mandatory; scroll-behavior: smooth;">
+                        
+                        <!-- Tarjeta de Noticia 1 --><article class="flex-shrink-0 w-72 md:w-80 bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col group border border-gray-100" style="scroll-snap-align: start;">
+                            <div class="overflow-hidden rounded-t-2xl">
+                                <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%D&auto=format&fit=crop&w=1332&q=80"
+                                     alt="Personas colaborando en una oficina"
+                                     class="h-40 w-full object-cover transform group-hover:scale-105 transition-transform duration-300"
+                                     onerror="this.onerror=null;this.src='https://placehold.co/600x400/777/fff?text=Noticia';">
+                            </div>
+                            <div class="p-4 flex flex-col flex-grow">
+                                <div class="flex gap-2 mb-2">
+                                    <span class="text-xs font-medium text-blue-700 bg-blue-100 px-2 py-0.5 rounded-full">Comunidad</span>
+                                </div>
+                                <h3 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-blue-700 transition-colors leading-tight">Wiki Loves Monuments 2024 cierra con éxito</h3>
+                                <p class="text-xs text-gray-500 mt-1 mb-3 flex-grow">
+                                    Por <span class="font-medium text-gray-700">Equipo Wikimedia</span> - 25 Oct, 2024
+                                </p>
+                                <a href="#" class="text-blue-600 font-semibold self-start text-sm">Leer más &rarr;</a>
+                            </div>
+                        </article>
+                        
+                        <!-- Tarjeta de Noticia 2 --><article class="flex-shrink-0 w-72 md:w-80 bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col group border border-gray-100" style="scroll-snap-align: start;">
+                            <div class="overflow-hidden rounded-t-2xl">
+                                <img src="https://images.unsplash.com/photo-1600880292203-94266e50431b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%D&auto=format&fit=crop&w=1074&q=80"
+                                     alt="Manos sosteniendo una planta pequeña"
+                                     class="h-40 w-full object-cover transform group-hover:scale-105 transition-transform duration-300"
+                                     onerror="this.onerror=null;this.src='https://placehold.co/600x400/777/fff?text=Noticia';">
+                            </div>
+                            <div class="p-4 flex flex-col flex-grow">
+                                <div class="flex gap-2 mb-2">
+                                    <span class="text-xs font-medium text-teal-700 bg-teal-100 px-2 py-0.5 rounded-full">Cultura</span>
+                                </div>
+                                <h3 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-blue-700 transition-colors leading-tight">Wikimedia se suma al Día del Patrimonio</h3>
+                                <p class="text-xs text-gray-500 mt-1 mb-3 flex-grow">
+                                    Por <span class="font-medium text-gray-700">Equipo Wikimedia</span> - 18 Oct, 2024
+                                </p>
+                                <a href="#" class="text-blue-600 font-semibold self-start text-sm">Leer más &rarr;</a>
+                            </div>
+                        </article>
+                        
+                        <!-- Tarjeta de Noticia 3 --><article class="flex-shrink-0 w-72 md:w-80 bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col group border border-gray-100" style="scroll-snap-align: start;">
+                            <div class="overflow-hidden rounded-t-2xl">
+                                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%D&auto=format&fit=crop&w=1171&q=80"
+                                     alt="Estudiantes en una sala de clases"
+                                     class="h-40 w-full object-cover transform group-hover:scale-105 transition-transform duration-300"
+                                     onerror="this.onerror=null;this.src='https://placehold.co/600x400/777/fff?text=Noticia';">
+                            </div>
+                            <div class="p-4 flex flex-col flex-grow">
+                                <div class="flex gap-2 mb-2">
+                                    <span class="text-xs font-medium text-purple-700 bg-purple-100 px-2 py-0.5 rounded-full">Educación</span>
+                                </div>
+                                <h3 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-blue-700 transition-colors leading-tight">Taller de edición en la Universidad de Chile</h3>
+                                <p class="text-xs text-gray-500 mt-1 mb-3 flex-grow">
+                                    Por <span class="font-medium text-gray-700">Equipo Wikimedia</span> - 10 Oct, 2024
+                                </p>
+                                <a href="#" class="text-blue-600 font-semibold self-start text-sm">Leer más &rarr;</a>
+                            </div>
+                        </article>
+
+                        <!-- Tarjeta de Noticia 4 --><article class="flex-shrink-0 w-72 md:w-80 bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col group border border-gray-100" style="scroll-snap-align: start;">
+                            <div class="overflow-hidden rounded-t-2xl">
+                                <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%D&auto=format&fit=crop&w=1074&q=80"
+                                     alt="Personas en una reunión de directorio"
+                                     class="h-40 w-full object-cover transform group-hover:scale-105 transition-transform duration-300"
+                                     onerror="this.onerror=null;this.src='https://placehold.co/600x400/777/fff?text=Noticia';">
+                            </div>
+                            <div class="p-4 flex flex-col flex-grow">
+                                <div class="flex gap-2 mb-2">
+                                    <span class="text-xs font-medium text-red-700 bg-red-100 px-2 py-0.5 rounded-full">Opinión</span>
+                                </div>
+                                <h3 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-blue-700 transition-colors leading-tight">La importancia de la reforma al derecho de autor</h3>
+                                <p class="text-xs text-gray-500 mt-1 mb-3 flex-grow">
+                                    Por <span class="font-medium text-gray-700">Directorio</span> - 02 Oct, 2024
+                                </p>
+                                <a href="#" class="text-blue-600 font-semibold self-start text-sm">Leer más &rarr;</a>
+                            </div>
+                        </article>
+
+                        <!-- Tarjeta de Noticia 5 --><article class="flex-shrink-0 w-72 md:w-80 bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col group border border-gray-100" style="scroll-snap-align: start;">
+                            <div class="overflow-hidden rounded-t-2xl">
+                                <img src="https://placehold.co/600x400/99e6b4/166534?text=Noticia+5"
+                                     alt="Gráfico de resultados de encuesta"
+                                     class="h-40 w-full object-cover transform group-hover:scale-105 transition-transform duration-300"
+                                     onerror="this.onerror=null;this.src='https://placehold.co/600x400/777/fff?text=Noticia';">
+                            </div>
+                            <div class="p-4 flex flex-col flex-grow">
+                                <div class="flex gap-2 mb-2">
+                                    <span class="text-xs font-medium text-green-700 bg-green-100 px-2 py-0.5 rounded-full">General</span>
+                                </div>
+                                <h3 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-blue-700 transition-colors leading-tight">Resultados Encuesta Anual de Comunidad</h3>
+                                <p class="text-xs text-gray-500 mt-1 mb-3 flex-grow">
+                                    Por <span class="font-medium text-gray-700">Equipo Wikimedia</span> - 28 Sep, 2024
+                                </p>
+                                <a href="#" class="text-blue-600 font-semibold self-start text-sm">Leer más &rarr;</a>
+                            </div>
+                        </article>
+
+                    </div>
+                    <!-- Botones de carrusel movidos aquí --><div class="flex justify-center items-center gap-4 mt-8">
+                        <button class="news-prev bg-white border border-gray-300 rounded-full p-3 text-gray-600 hover:bg-gray-100 hover:text-blue-600 transition-all shadow-sm active:scale-95" aria-label="Noticia anterior">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" /></svg>
+                        </button>
+                        <button class="news-next bg-white border border-gray-300 rounded-full p-3 text-gray-600 hover:bg-gray-100 hover:text-blue-600 transition-all shadow-sm active:scale-95" aria-label="Siguiente noticia">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+                        </button>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- ===== SECCIÓN ALIANZAS ===== --><section class="py-16 md:py-24 bg-white">
+                <div class="container mx-auto px-4 lg:px-6">
+                    <div class="text-center max-w-3xl mx-auto mb-12">
+                        <h2 class="text-3xl lg:text-4xl font-extrabold text-gray-900">Nuestras Alianzas</h2>
+                        <p class="mt-4 text-lg text-gray-600">
+                            Colaboramos con organizaciones que comparten nuestra visión de un mundo con conocimiento libre.
+                        </p>
+                    </div>
+                    
+                    <!-- Marquee de Logos (Imágenes de alianzas actualizadas) --><div class="w-full overflow-hidden" style="-webkit-mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%); mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);">
+                        <div class="flex animate-scroll" onmouseover="this.style.animationPlayState='paused'" onmouseout="this.style.animationPlayState='running'">
+                            <!-- Logos (duplicados para efecto infinito) --><img src="/alianza 1.png" alt="Logo Alianza 1" class="h-16 mx-10 filter grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all">
+                            <img src="/alianza 2.png" alt="Logo Alianza 2" class="h-16 mx-10 filter grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all">
+                            <img src="/alianza 3.png" alt="Logo Alianza 3" class="h-16 mx-10 filter grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all">
+                            <img src="/alianza 4.png" alt="Logo Alianza 4" class="h-16 mx-10 filter grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all">
+                            <img src="/alianza 5.jpg" alt="Logo Alianza 5" class="h-16 mx-10 filter grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all">
+                            <img src="/alianza 6.png" alt="Logo Alianza 6" class="h-16 mx-10 filter grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all">
+                            <img src="/alianza 7.png" alt="Logo Alianza 7" class="h-16 mx-10 filter grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all">
+                            <img src="/alianza 8.png" alt="Logo Alianza 8" class="h-16 mx-10 filter grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all">
+                            <img src="/alianza 9.jpg" alt="Logo Alianza 9" class="h-16 mx-10 filter grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all">
+                            <img src="/alianza 10.jpg" alt="Logo Alianza 10" class="h-16 mx-10 filter grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all">
+                            
+                            <img src="/alianza 1.png" alt="Logo Alianza 1" class="h-16 mx-10 filter grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all">
+                            <img src="/alianza 2.png" alt="Logo Alianza 2" class="h-16 mx-10 filter grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all">
+                            <img src="/alianza 3.png" alt="Logo Alianza 3" class="h-16 mx-10 filter grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all">
+                            <img src="/alianza 4.png" alt="Logo Alianza 4" class="h-16 mx-10 filter grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all">
+                            <img src="/alianza 5.jpg" alt="Logo Alianza 5" class="h-16 mx-10 filter grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all">
+                            <img src="/alianza 6.png" alt="Logo Alianza 6" class="h-16 mx-10 filter grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all">
+                            <img src="/alianza 7.png" alt="Logo Alianza 7" class="h-16 mx-10 filter grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all">
+                            <img src="/alianza 8.png" alt="Logo Alianza 8" class="h-16 mx-10 filter grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all">
+                            <img src="/alianza 9.jpg" alt="Logo Alianza 9" class="h-16 mx-10 filter grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all">
+                            <img src="/alianza 10.jpg" alt="Logo Alianza 10" class="h-16 mx-10 filter grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- ===== SECCIÓN INSTAGRAM ===== --><section class="py-16 md:py-24 bg-gray-50">
+                <div class="container mx-auto px-4 lg:px-6">
+                    <div class="text-center max-w-3xl mx-auto mb-12">
+                        <h2 class="text-3xl lg:text-4xl font-extrabold text-gray-900">Sigue nuestra comunidad</h2>
+                        <p class="mt-4 text-lg text-gray-600">
+                            Conéctate con nosotros en redes sociales y mira lo que estamos haciendo.
+                        </p>
+                        <a href="#" target="_blank" class="mt-6 inline-flex items-center gap-2 text-white bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 hover:opacity-90 font-medium rounded-lg text-base px-6 py-3 transition-opacity shadow-lg shadow-pink-500/30">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                            Seguir en Instagram
+                        </a>
+                    </div>
+                    
+                    <!-- Grilla de Fotos --><div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 instagram-grid">
+                        <a href="#" target="_blank" class="block rounded-xl shadow-sm overflow-hidden transition-transform transform hover:scale-105 hover:shadow-lg">
+                            <img src="https://images.unsplash.com/photo-1535957998253-26ae1ef29506?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%D&auto=format&fit=crop&w=736&q=80" alt="Foto de Instagram 1" onerror="this.onerror=null;this.src='https://placehold.co/400x400/999/fff?text=Post';">
+                        </a>
+                        <a href="#" target="_blank" class="block rounded-xl shadow-sm overflow-hidden transition-transform transform hover:scale-105 hover:shadow-lg">
+                            <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%D&auto=format&fit=crop&w=1170&q=80" alt="Foto de Instagram 2" onerror="this.onerror=null;this.src='https://placehold.co/400x400/999/fff?text=Post';">
+                        </a>
+                        <a href="#" target="_blank" class="block rounded-xl shadow-sm overflow-hidden transition-transform transform hover:scale-105 hover:shadow-lg">
+                            <img src="https://images.unsplash.com/photo-1560439514-4e9645039924?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%D&auto=format&fit=crop&w=735&q=80" alt="Foto de Instagram 3" onerror="this.onerror=null;this.src='https://placehold.co/400x400/999/fff?text=Post';">
+                        </a>
+                        <a href="#" target="_blank" class="block rounded-xl shadow-sm overflow-hidden transition-transform transform hover:scale-105 hover:shadow-lg">
+                            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%D&auto=format&fit=crop&w=1170&q=80" alt="Foto de Instagram 4" onerror="this.onerror=null;this.src='https://placehold.co/400x400/999/fff?text=Post';">
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+        
+        <!-- Las otras páginas (Sobre Nosotros, Programas, etc.) han sido eliminadas de este archivo --></main>
+    
+    <!-- ===== FOOTER ===== --><footer class="bg-gray-900 text-gray-300 pt-16 pb-8">
+        <div class="container mx-auto px-4 lg:px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                
+                <!-- Columna 1: Logo y Descripción --><div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <!-- Usamos el logo oscuro/estándar en el footer --><img src="/wikimedia chile logo.png" 
+                             alt="Wikimedia Chile Logo" 
+                             class="h-9 w-auto bg-white p-1 rounded-sm"
+                             onerror="this.onerror=null;this.src='https://placehold.co/120x36/fff/333?text=WM+Chile';">
+                    </div>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        Promoviendo el conocimiento libre y la cultura abierta en Chile como el capítulo local de la Fundación Wikimedia.
+                    </p>
+                </div>
+                
+                <!-- Columna 2: Navegación --><div>
+                    <h5 class="text-base font-semibold text-white mb-4">Navegación</h5>
+                    <ul class="space-y-3">
+                        <li><a href="sobre-nosotros.html" class="text-sm hover:text-white transition-colors">Sobre Nosotros</a></li>
+                        <li><a href="programas.html" class="text-sm hover:text-white transition-colors">Programas</a></li>
+                        <li><a href="noticias.html" class="text-sm hover:text-white transition-colors">Noticias</a></li>
+                        <li><a href="agenda.html" class="text-sm hover:text-white transition-colors">Agenda</a></li>
+                        <li><a href="hazte-socio.html" class="text-sm hover:text-white transition-colors">Hazte Socio/a</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Columna 3: Enlaces Útiles --><div>
+                    <h5 class="text-base font-semibold text-white mb-4">Enlaces Útiles</h5>
+                    <ul class="space-y-3">
+                        <li><a href="memorias.html" class="text-sm hover:text-white transition-colors">Memorias Anuales</a></li>
+                        <li><a href="transparencia.html" class="text-sm hover:text-white transition-colors">Transparencia</a></li>
+                        <li><a href="estatutos.html" class="text-sm hover:text-white transition-colors">Estatutos</a></li>
+                        <li><a href="privacidad.html" class="text-sm hover:text-white transition-colors">Políticas de Privacidad</a></li>
+                        <li><a href="contacto.html" class="text-sm hover:text-white transition-colors">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Columna 4: Conéctate y Suscríbete --><div id="footer-subscribe">
+                    <h5 class="text-base font-semibold text-white mb-4">Conéctate</h5>
+                    <div class="flex gap-4 mb-6">
+                        <a href="#" target="_blank" class="text-gray-400 hover:text-white transition-colors" aria-label="Twitter">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 1.4 3.3 4.9 3.3 4.9s-1.4.6-2.8.4c-1.2 1.2-2.8 2-4.6 2-3.8 0-6.6-2.8-6.6-6.6 0-.8.2-1.6.5-2.3C6.1 12.3 2.8 10.2 1.1 6.1c-.6 1.8.1 3.8 1.4 4.6C1.8 10.6 1 10.3 1 10.3s.2 2.1 1.6 3.2C1.2 13.9 1 13.7 1 13.7s.8 2.3 3.3 2.6c-1.2 1.1-2.8 1.6-4.6 1.6H1c1.6 1.1 3.5 1.7 5.5 1.7 6.6 0 10.2-5.5 10.2-10.2 0-.2 0-.3 0-.5 1.1-.8 2.1-1.8 2.8-2.9z"></path></svg>
+                        </a>
+                        <a href="#" target="_blank" class="text-gray-400 hover:text-white transition-colors" aria-label="Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        </a>
+                        <a href="#" target="_blank" class="text-gray-400 hover:text-white transition-colors" aria-label="Facebook">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                        </a>
+                        <a href="#" target="_blank" class="text-gray-400 hover:text-white transition-colors" aria-label="LinkedIn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                        </a>
+                    </div>
+                    <h5 class="text-base font-semibold text-white mb-4 mt-8">Suscríbete</h5>
+                    <form class="flex gap-2">
+                        <input type="email" class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-sm text-white focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="tu.correo@ejemplo.com" aria-label="Correo electrónico para suscripción">
+                        <button type="submit" class="text-white bg-blue-600 hover:bg-blue-700 font-medium rounded-lg text-sm px-4 py-2 transition-colors" aria-label="Suscribirse">
+                            &rarr;
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <hr class="border-gray-700 my-8">
+            
+            <div class="flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
+                <p>&copy; 2024 Wikimedia Chile. Todos los derechos reservados.</p>
+                <p class="mt-4 md:mt-0">
+                    El contenido está disponible bajo <a href="#" class="hover:text-white underline">CC BY-SA 4.0</a> salvo que se indique lo contrario.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // --- Variables de Logo ---
+            // Logo para el header siempre oscuro
+            const darkLogo = '/wikiemdia foundation logo.webp'; 
+
+            // --- Elementos del DOM ---
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const closeMobileMenuButton = document.getElementById('close-mobile-menu');
+            
+            const searchModal = document.getElementById('search-modal');
+            const openSearchButtons = [
+                document.getElementById('search-button-desktop'), 
+                document.getElementById('search-button-mobile')
+            ];
+            const closeSearchButton = document.getElementById('close-search-modal');
+            const searchInput = document.getElementById('search-input');
+            
+            const header = document.getElementById('main-header');
+            const headerLogo = document.getElementById('header-logo');
+
+            // --- Lógica del Header (Scroll) ---
+            // El logo siempre es oscuro, pero el header cambia de fondo
+            function handleHeaderScroll() {
+                if (window.scrollY > 50) {
+                    header.classList.add('header-scrolled');
+                } else {
+                    header.classList.remove('header-scrolled');
+                }
+            }
+            
+            // Asegurarse de que el logo inicial sea el oscuro
+            if(headerLogo) headerLogo.src = darkLogo;
+
+            // Añadir el listener de scroll y ejecutarlo al cargar
+            window.addEventListener('scroll', handleHeaderScroll);
+            handleHeaderScroll(); 
+
+            // --- Lógica del Menú Móvil ---
+            if (mobileMenuButton && mobileMenu && closeMobileMenuButton) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.remove('hidden');
+                });
+                
+                closeMobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            }
+            
+            // --- Lógica del Modal de Búsqueda ---
+            if (searchModal && closeSearchButton && openSearchButtons.length > 0) {
+                
+                function openSearch() {
+                    searchModal.classList.remove('hidden');
+                    setTimeout(() => searchInput.focus(), 100); // Dar foco al input
+                }
+
+                function closeSearch() {
+                    searchModal.classList.add('hidden');
+                }
+                
+                openSearchButtons.forEach(btn => {
+                    if(btn) btn.addEventListener('click', openSearch);
+                });
+                
+                closeSearchButton.addEventListener('click', closeSearch);
+
+                // Cerrar al hacer clic fuera del modal
+                searchModal.addEventListener('click', (e) => {
+                    if (e.target === searchModal) {
+                        closeSearch();
+                    }
+                });
+                
+                // Cerrar con la tecla "Escape"
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && !searchModal.classList.contains('hidden')) {
+                        closeSearch();
+                    }
+                });
+            }
+
+            // --- Lógica de Carruseles ---
+            function setupCarousel(carouselId, prevButtonClass, nextButtonClass) {
+                const carousel = document.getElementById(carouselId);
+                const prevButton = document.querySelector('.' + prevButtonClass);
+                const nextButton = document.querySelector('.' + nextButtonClass);
+
+                if (!carousel || !prevButton || !nextButton) return;
+
+                // Detectar el ancho de una tarjeta (asumiendo que todas son iguales)
+                const card = carousel.querySelector('article');
+                if (!card) return;
+                
+                const cardStyle = window.getComputedStyle(card);
+                const cardMargin = parseFloat(cardStyle.marginRight) || parseFloat(cardStyle.gap) || 24; // 24 es el gap-6
+                const scrollAmount = card.offsetWidth + cardMargin;
+
+                prevButton.addEventListener('click', () => {
+                    carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+                });
+
+                nextButton.addEventListener('click', () => {
+                    carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                });
+            }
+
+            // Inicializar los carruseles de la página de inicio
+            setupCarousel('agenda-carousel', 'agenda-prev', 'agenda-next');
+            setupCarousel('news-carousel', 'news-prev', 'news-next');
+
+        });
+    </script>
+
+</body>
+</html>
+
