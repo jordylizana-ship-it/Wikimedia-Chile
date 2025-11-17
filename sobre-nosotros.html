@@ -9,14 +9,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-        /* --- ESTILOS GLOBALES (IDÉNTICOS A INDEX.HTML) --- */
         body {
             font-family: 'Inter', sans-serif;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
             background-color: #ffffff; 
         }
-        /* --- HEADER (IDÉNTICO A INDEX.HTML) --- */
         #main-header {
             transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, color 0.3s ease-in-out;
             color: #4B5563;
@@ -87,47 +85,24 @@
             background-color: #4a3f9a;
             border-color: #4a3f9a;
         }
-        /* --- ESTILOS DE FONDOS DE SECCIÓN (IDÉNTICOS A INDEX.HTML) --- */
-        .ornament-card {
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s ease-in-out;
-        }
-        .ornament-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-        .ornament-bg {
-            position: absolute;
-            top: -20px;
-            right: -30px;
-            width: 150px;
-            height: 150px;
-            opacity: 0.15;
-            z-index: 1;
-        }
-        /* Fondo de Círculos */
         .section-bg-ornament-circles {
             background-color: #ffffff;
-            background-image: url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23e5e7eb' stroke-width='1'%3E%3Ccircle cx='50' cy='50' r='48' /%3E%3Ccircle cx='50' cy='50' r='38' /%3E%3Ccircle cx='50' cy='50' r='28' /%3E%3C/g%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23f3f4f6' stroke-width='1'%3E%3Ccircle cx='50' cy='50' r='48' /%3E%3Ccircle cx='50' cy='50' r='38' /%3E%3Ccircle cx='50' cy='50' r='28' /%3E%3C/g%3E%3C/svg%3E");
             background-size: 250px 250px;
             background-position: center top;
         }
-        /* Fondo de Estrellas (NUEVO PARA ESTA PÁGINA) */
         .section-bg-ornament-stars {
             background-color: #ffffff;
-            background-image: url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23e5e7eb' stroke-width='1'%3E%3Cpath d='M50 0 V20 M50 100 V80 M0 50 H20 M100 50 H80 M35.857 35.857 L42.928 42.928 M64.143 64.143 L57.072 57.072 M35.857 64.143 L42.928 57.072 M64.143 35.857 L57.072 42.928' /%3E%3C/g%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23f3f4f6' stroke-width='1'%3E%3Cpath d='M50 0 V20 M50 100 V80 M0 50 H20 M100 50 H80 M35.857 35.857 L42.928 42.928 M64.143 64.143 L57.072 57.072 M35.857 64.143 L42.928 57.072 M64.143 35.857 L57.072 42.928' /%3E%3C/g%3E%3C/svg%3E");
             background-size: 200px 200px;
             background-position: center top;
         }
-        /* Fondo de Puntos (Para usar si es necesario) */
         .section-bg-ornament-dots {
             background-color: #ffffff;
-            background-image: url("data:image/svg+xml,%3Csvg width='150' height='150' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23e9e7c4' fill-opacity='0.6'%3E%3Ccircle cx='50' cy='50' r='5' /%3E%3Ccircle cx='35' cy='35' r='5' /%3E%3Ccircle cx='65' cy='35' r='5' /%3E%3Ccircle cx='35' cy='65' r='5' /%3E%3Ccircle cx='65' cy='65' r='5' /%3E%3Ccircle cx='50' cy='20' r='5' /%3E%3Ccircle cx='50' cy='80' r='5' /%3E%3C/g%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml,%3Csvg width='150' height='150' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23e9e7c4' fill-opacity='0.3'%3E%3Ccircle cx='50' cy='50' r='5' /%3E%3Ccircle cx='35' cy='35' r='5' /%3E%3Ccircle cx='65' cy='35' r='5' /%3E%3Ccircle cx='35' cy='65' r='5' /%3E%3Ccircle cx='65' cy='65' r='5' /%3E%3Ccircle cx='50' cy='20' r='5' /%3E%3Ccircle cx='50' cy='80' r='5' /%3E%3C/g%3E%3C/svg%3E");
             background-size: 150px 150px;
             background-position: center 20px;
         }
-        /* --- UTILIDADES (IDÉNTICAS A INDEX.HTML) --- */
         .hide-scrollbar {
             -ms-overflow-style: none;
             scrollbar-width: none;
@@ -138,11 +113,76 @@
         .hero-overlay {
             background: linear-gradient(0deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.2) 100%);
         }
+        .collapsible-content {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out, opacity 0.3s ease-in-out, margin-top 0.3s ease-in-out;
+            will-change: max-height, opacity;
+            margin-top: 0;
+        }
+        .collapsible-content.expanded {
+            max-height: 1000px; /* Altura suficiente para el contenido */
+            opacity: 1;
+            margin-top: 1rem; /* mt-4 */
+        }
+        .read-more-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.25rem; /* 4px */
+            font-weight: 600;
+            color: #5748b5;
+            transition: all 0.2s ease-in-out;
+        }
+        .read-more-btn:hover {
+            color: #308557;
+        }
+        .read-more-btn .icon {
+            width: 1rem; /* 16px */
+            height: 1rem; /* 16px */
+            transition: transform 0.3s ease-in-out;
+        }
+        .read-more-btn .icon-plus {
+            display: inline-block;
+        }
+        .read-more-btn .icon-minus {
+            display: none;
+        }
+        .collapsible-content.expanded + .read-more-btn .icon-plus {
+            display: none;
+        }
+        .collapsible-content.expanded + .read-more-btn .icon-minus {
+            display: inline-block;
+        }
+        
+        /* Estilo para las imágenes del DIRECTORIO (Grandes y Rectangulares) */
+        .directory-member-img {
+            width: 100%;
+            height: 224px; /* h-56 */
+            object-fit: contain; /* CAMBIO: Asegura que la imagen completa sea visible */
+            object-position: center;
+            background-color: #f3f4f6; /* bg-gray-100 - Fondo para rellenar espacios si object-fit es contain */
+        }
+
+        /* Estilo para las imágenes del EQUIPO (Pequeñas y Circulares) */
+        .team-member-img-circle {
+          width: 128px; /* w-32 */
+            height: 128px; /* h-32 */
+            border-radius: 9999px; /* rounded-full */
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 1rem; /* mb-4 */
+            border-width: 4px;
+            border-color: #ffffff; /* border-white */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1); /* shadow-lg */
+            background-color: #e5e7eb; /* bg-gray-200 - Fondo para rellenar espacios si object-fit es contain */
+            object-fit: contain; /* CAMBIO: Asegura que la imagen completa sea visible */
+        }
     </style>
 </head>
 <body class="bg-white text-gray-800">
 
-    <!-- ===== HEADER (IDÉNTICO A INDEX.HTML) ===== -->
     <header id="main-header" class="fixed top-0 left-0 right-0 z-50 header-scrolled">
         <nav class="container mx-auto px-6 lg:px-8 py-5">
             <div class="flex justify-between items-center">
@@ -157,7 +197,7 @@
                 </div>
                 
                 <div class="hidden lg:flex flex-1 justify-center items-center gap-8">
-                    <a href="sobre-nosotros.html" class="nav-link font-medium text-blue-600">Sobre Nosotros</a> <!-- Link activo -->
+                    <a href="sobre-nosotros.html" class="nav-link font-medium text-blue-600">Sobre Nosotros</a>
                     <a href="programas.html" class="nav-link font-medium">Programas</a>
                     <a href="noticias.html" class="nav-link font-medium">Noticias</a>
                     <a href="agenda.html" class="nav-link font-medium">Agenda</a>
@@ -183,7 +223,7 @@
         </nav>
         
         <!-- Menú Móvil -->
-        <div id="mobile-menu" class="hidden lg:hidden fixed inset-0 bg-white z-50 p-6">
+        <div id="mobile-menu" class="hidden lg:hidden fixed inset-0 bg-white z-50 p-6" style="background-color: white;">
             <div class="flex justify-between items-center mb-8">
                 <img src="/wikiemdia foundation logo.webp" 
                      alt="Wikimedia Chile Logo" 
@@ -195,7 +235,7 @@
             </div>
             <div class="flex flex-col gap-5">
                 <a href="index.html" class="block text-xl text-gray-700 hover:text-blue-600 font-medium py-2">Inicio</a>
-                <a href="sobre-nosotros.html" class="block text-xl text-blue-600 font-semibold py-2">Sobre Nosotros</a> <!-- Link activo -->
+                <a href="sobre-nosotros.html" class="block text-xl text-blue-600 font-semibold py-2">Sobre Nosotros</a>
                 <a href="programas.html" class="block text-xl text-gray-700 hover:text-blue-600 font-medium py-2">Programas</a>
                 <a href="noticias.html" class="block text-xl text-gray-700 hover:text-blue-600 font-medium py-2">Noticias</a>
                 <a href="agenda.html" class="block text-xl text-gray-700 hover:text-blue-600 font-medium py-2">Agenda</a>
@@ -208,7 +248,7 @@
         </div>
     </header>
 
-    <!-- ===== MODAL DE BÚSQUEDA (IDÉNTICO A INDEX.HTML) ===== -->
+    <!-- Modal de Búsqueda -->
     <div id="search-modal" class="hidden fixed inset-0 bg-black/70 z-50 flex items-start justify-center pt-20 md:pt-32 p-4">
         <div class="bg-white rounded-xl shadow-2xl w-full max-w-2xl relative" id="search-modal-content">
             <button id="close-search-modal" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600" aria-label="Cerrar búsqueda">
@@ -226,32 +266,18 @@
         </div>
     </div>
     
-    <!-- ===== CONTENIDO PRINCIPAL - PÁGINA SOBRE NOSOTROS ===== -->
     <main>
         
-        <!-- Encabezado de la Página (Hero) -->
-        <section class="relative pt-48 pb-32 text-center text-white overflow-hidden">
-            <!-- Imagen de fondo -->
-            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1600&q=80" 
+        <!-- Sección de Banner -->
+        <section class="relative pt-20 h-[400px] md:h-[450px] flex items-center justify-center text-white overflow-hidden bg-gray-100">
+            <img src="banner.png" 
                  alt="Comunidad de Wikimedia trabajando junta" 
-                 class="absolute inset-0 w-full h-full object-cover">
-            <!-- Overlay oscuro -->
-            <div class="absolute inset-0 bg-black/60"></div>
-            <!-- Contenido -->
-            <div class="container mx-auto px-4 lg:px-6 relative z-10">
-                <h1 class="text-4xl lg:text-5xl font-extrabold !leading-tight tracking-tight drop-shadow-xl">
-                    Somos el movimiento por el <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-blue-400">conocimiento libre</span> en Chile
-                </h1>
-                <p class="mt-6 text-lg text-gray-200 max-w-3xl mx-auto drop-shadow-lg">
-                    Nacimos en 2011 para representar y fortalecer los intereses del movimiento Wikimedia en el país.
-                </p>
-            </div>
+                 class="w-full h-full object-cover object-center">
         </section>
 
-        <!-- === Separador Visual (El que te gustó de index.html) CON BREADCRUMBS === -->
-        <div class="py-8 md:py-12">
+        <!-- Breadcrumbs -->
+        <div class="py-8 md:py-10">
             <div class="container mx-auto px-4 lg:px-6">
-                <!-- Breadcrumbs (DISEÑO MEJORADO) -->
                 <nav class="flex justify-center" aria-label="Breadcrumb">
                     <ol role="list" class="flex items-center space-x-2">
                         <li>
@@ -274,87 +300,28 @@
                         </li>
                     </ol>
                 </nav>
-                <div class="flex items-center justify-center space-x-4 max-w-lg mx-auto mt-8">
-                    <div class="h-px flex-grow rounded-full" style="background: linear-gradient(to left, #5748b5, #308557, #0e65c0); opacity: 0.3;"></div>
-                    <div class="flex-shrink-0 flex gap-3 items-center">
-                        <svg class="w-5 h-5" style="color: #0e65c0;" fill="currentColor" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M50 0L61.2265 38.7735L100 50L61.2265 61.2265L50 100L38.7735 61.2265L0 50L38.7735 38.7735L50 0Z" /></svg>
-                        <svg class="w-7 h-7" style="color: #5748b5;" fill="currentColor" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M50 0L61.2265 38.7735L100 50L61.2265 61.2265L50 100L38.7735 61.2265L0 50L38.7735 38.7735L50 0Z" /></svg>
-                        <svg class="w-5 h-5" style="color: #308557;" fill="currentColor" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M50 0L61.2265 38.7735L100 50L61.2265 61.2265L50 100L38.7735 61.2265L0 50L38.7735 38.7735L50 0Z" /></svg>
-                    </div>
-                    <div class="h-px flex-grow rounded-full" style="background: linear-gradient(to right, #5748b5, #308557, #0e65c0); opacity: 0.3;"></div>
-                </div>
             </div>
         </div>
         
-        <!-- === INICIO: Sección Nuestra Trayectoria (NUEVO DISEÑO) === -->
-        <!-- CAMBIO: Fondo cambiado a 'stars' -->
-        <section class="py-12 md:py-16 section-bg-ornament-stars">
+        <!-- Sección Quiénes Somos -->
+        <section class="pt-8 pb-16 md:pt-12 md:pb-24 section-bg-ornament-stars">
             <div class="container mx-auto px-4 lg:px-6">
                 <div class="max-w-4xl mx-auto">
-                    <!-- Título de la Sección -->
                     <div class="text-center mb-12">
-                        <span class="text-sm font-bold uppercase" style="color: #5748b5;">NUESTRA TRAYECTORIA</span>
+                        <span class="text-sm font-bold uppercase" style="color: #5748b5;">QUIÉNES SOMOS</span>
                         <h2 class="text-3xl lg:text-4xl font-extrabold text-gray-900 mt-3">Más de una década por el conocimiento libre</h2>
                     </div>
-
-                    <!-- Lista de Hitos (Nuevo Diseño) -->
-                    <div class="space-y-10">
-                        <!-- Hito 1: Fundación -->
-                        <div class="flex flex-col sm:flex-row gap-6">
-                            <div class="flex-shrink-0 w-full sm:w-48 text-center sm:text-right">
-                                <div class="inline-flex items-center justify-center w-16 h-16 bg-blue-100 text-blue-600 rounded-full mb-2 border-4 border-white shadow-md">
-                                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                                </div>
-                                <h3 class="text-xl font-bold text-gray-900">Fundados en 2011</h3>
-                            </div>
-                            <div class="flex-1 border-l-0 sm:border-l-2 border-gray-200 pl-0 sm:pl-8">
-                                <p class="text-lg text-gray-700 leading-relaxed">
-                                    Nacimos como un grupo de voluntarios apasionados por la cultura libre, con la misión de impulsar el movimiento en Chile.
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- Hito 2: Capítulo Oficial -->
-                        <div class="flex flex-col sm:flex-row gap-6">
-                            <div class="flex-shrink-0 w-full sm:w-48 text-center sm:text-right">
-                                <div class="inline-flex items-center justify-center w-16 h-16 bg-green-100 text-green-600 rounded-full mb-2 border-4 border-white shadow-md">
-                                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9"></path></svg>
-                                </div>
-                                <h3 class="text-xl font-bold text-gray-900">Capítulo Oficial</h3>
-                            </div>
-                            <div class="flex-1 border-l-0 sm:border-l-2 border-gray-200 pl-0 sm:pl-8">
-                                <p class="text-lg text-gray-700 leading-relaxed">
-                                    Fuimos reconocidos por la <strong class="font-semibold">Fundación Wikimedia</strong> como su capítulo local oficial, representando los intereses del movimiento en el país.
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- Hito 3: Proyectos Globales -->
-                        <div class="flex flex-col sm:flex-row gap-6">
-                            <div class="flex-shrink-0 w-full sm:w-48 text-center sm:text-right">
-                                <div class="inline-flex items-center justify-center w-16 h-16 bg-purple-100 text-purple-600 rounded-full mb-2 border-4 border-white shadow-md">
-                                   <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
-                                </div>
-                                <h3 class="text-xl font-bold text-gray-900">Proyectos Globales</h3>
-                            </div>
-                            <div class="flex-1 border-l-0 sm:border-l-2 border-gray-200 pl-0 sm:pl-8">
-                                <p class="text-lg text-gray-700 leading-relaxed">
-                                    Nuestro trabajo apoya directamente a <strong class="font-semibold">Wikipedia</strong>, <strong class="font-semibold">Wikidata</strong>, <strong class="font-semibold">Wikimedia Commons</strong> y otros proyectos que construyen la suma de todo el conocimiento humano.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                    <p class="text-base text-gray-700 leading-relaxed max-w-4xl mx-auto text-center">
+                        Wikimedia Chile es el capítulo chileno de <b class="font-semibold text-gray-800">Wikimedia Foundation</b>. Creada en 2011, nuestro objetivo es generar <i class="text-purple-600">iniciativas, proyectos y alianzas</i> que promuevan el uso y la participación de la ciudadanía chilena en la creación de conocimiento para plataformas como <b class="font-semibold text-blue-600">Wikipedia</b> y los demás proyectos digitales libres hospedados por Wikimedia Foundation.
+                    </p>
                 </div>
             </div>
         </section>
-        <!-- === FIN: Sección Nuestra Trayectoria === -->
 
-        <!-- === INICIO: Separador Visual Ancho (COMO EN INDEX) === -->
+        <!-- Separador Decorativo -->
         <div class="py-12 md:py-16 bg-gradient-to-r from-[#5748b5] via-[#308557] to-[#0e65c0] relative overflow-hidden">
-            <!-- Textura de fondo con opacidad (CAMBIO: estrellas) -->
             <div class="absolute inset-0 opacity-10" style="background-image: url('data:image/svg+xml,%3Csvg width="200" height="200" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" stroke="%23ffffff" stroke-width="1"%3E%3Cpath d="M50 0 V20 M50 100 V80 M0 50 H20 M100 50 H80 M35.857 35.857 L42.928 42.928 M64.143 64.143 L57.072 57.072 M35.857 64.143 L42.928 57.072 M64.143 35.857 L57.072 42.928" /%3E%3C/g%3E%3C/svg%3E'); background-size: 200px 200px; background-position: center;"></div>
             
-            <!-- Motivo central de chispas -->
             <div class="container mx-auto px-4 lg:px-6 relative z-10">
                 <div class="flex items-center justify-center space-x-4 max-w-lg mx-auto">
                     <div class="h-px flex-grow rounded-full bg-white/30"></div>
@@ -367,75 +334,67 @@
                 </div>
             </div>
         </div>
-        <!-- === FIN: Separador Visual Ancho === -->
 
-        <!-- Sección Misión, Visión, Valores (NUEVO DISEÑO) -->
-        <!-- CAMBIO: Fondo cambiado a 'stars' -->
+        <!-- Sección Pilares -->
         <section class="py-12 md:py-16 section-bg-ornament-stars">
             <div class="container mx-auto px-4 lg:px-6">
                 <div class="text-center mb-12 max-w-3xl mx-auto">
                     <h2 class="text-3xl lg:text-4xl font-extrabold text-gray-900 mt-4">
-                        Nuestros <span style="color: #5748b5;">Pilares</span>
+                        Nuestros <span style="color: #5748b5;">Pilares Institucionales</span>
                     </h2>
-                    <p class="mt-6 text-base lg:text-lg text-gray-700 leading-relaxed">
-                        Estos son los principios fundamentales que guían cada una de nuestras acciones, programas y colaboraciones.
-                    </p>
                 </div>
                 
-                <!-- Lista de Pilares (Nuevo Diseño) -->
-                <div class="max-w-4xl mx-auto space-y-10">
-                    <!-- Pilar 1: Misión -->
-                    <div class="flex flex-col sm:flex-row gap-6">
-                        <div class="flex-shrink-0 w-full sm:w-48 text-center sm:text-right">
-                            <div class="inline-flex items-center justify-center w-16 h-16 bg-purple-100 text-purple-600 rounded-full mb-2 border-4 border-white shadow-md">
+                <div class="max-w-6xl mx-auto space-y-10">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                        <div class="bg-white p-8 rounded-2xl shadow-xl border border-gray-100">
+                            <div class="inline-flex items-center justify-center w-16 h-16 bg-purple-100 text-purple-600 rounded-full mb-4 border-4 border-white shadow-md">
                                 <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3v1.5M3 21v-1.5M21 3v1.5M21 21v-1.5M12 3v1.5M12 21v-1.5M3 12h1.5M21 12h-1.5M12 12l-.39.39a.5.5 0 000 .7l.39.39a.5.5 0 00.7 0l.39-.39a.5.5 0 000-.7l-.39-.39a.5.5 0 00-.7 0zM12 12a3 3 0 110-6 3 3 0 010 6z" /></svg>
                             </div>
-                            <h3 class="text-xl font-bold text-gray-900">Misión</h3>
-                        </div>
-                        <div class="flex-1 border-l-0 sm:border-l-2 border-gray-200 pl-0 sm:pl-8">
-                            <p class="text-lg text-gray-700 leading-relaxed">
-                                Empoderar y organizar a las personas para recolectar, desarrollar y difundir conocimiento libre.
+                            <h3 class="text-2xl font-bold text-gray-900 mb-3">Misión</h3>
+                            <p class="text-base text-gray-700 leading-relaxed">
+                                Impulsamos el <b class="font-semibold text-gray-800">conocimiento abierto</b> en Chile, articulando una <b class="font-semibold text-purple-700">comunidad diversa</b> que crea y visibiliza el patrimonio local a través de las plataformas Wikimedia, conectamos iniciativas locales y fortalecemos un ecosistema informativo <i class="text-gray-600">inclusivo y sostenible</i>.
                             </p>
                         </div>
-                    </div>
-                    <!-- Pilar 2: Visión -->
-                    <div class="flex flex-col sm:flex-row gap-6">
-                        <div class="flex-shrink-0 w-full sm:w-48 text-center sm:text-right">
-                            <div class="inline-flex items-center justify-center w-16 h-16 bg-green-100 text-green-600 rounded-full mb-2 border-4 border-white shadow-md">
+                        <div class="bg-white p-8 rounded-2xl shadow-xl border border-gray-100">
+                            <div class="inline-flex items-center justify-center w-16 h-16 bg-green-100 text-green-600 rounded-full mb-4 border-4 border-white shadow-md">
                                 <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
                             </div>
-                            <h3 class="text-xl font-bold text-gray-900">Visión</h3>
-                        </div>
-                        <div class="flex-1 border-l-0 sm:border-l-2 border-gray-200 pl-0 sm:pl-8">
-                            <p class="text-lg text-gray-700 leading-relaxed">
-                                Un mundo donde cada ser humano pueda compartir libremente la suma de todo el conocimiento.
+                            <h3 class="text-2xl font-bold text-gray-900 mb-3">Visión</h3>
+                            <p class="text-base text-gray-700 leading-relaxed">
+                                Ser un <b class="font-semibold text-purple-700">movimiento inclusivo</b> que promueva el conocimiento como un <b class="font-semibold text-gray-800">derecho esencial</b> en Chile. Ser referentes en la promoción del conocimiento, conectando la diversidad del país con el ecosistema abierto global e impulsando <b class="font-semibold text-blue-700">políticas</b> para un acceso equitativo y responsable.
                             </p>
                         </div>
                     </div>
-                    <!-- Pilar 3: Valores -->
-                    <div class="flex flex-col sm:flex-row gap-6">
-                        <div class="flex-shrink-0 w-full sm:w-48 text-center sm:text-right">
-                            <div class="inline-flex items-center justify-center w-16 h-16 bg-blue-100 text-blue-600 rounded-full mb-2 border-4 border-white shadow-md">
-                                <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" /></svg>
-                            </div>
-                            <h3 class="text-xl font-bold text-gray-900">Valores</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div class="bg-white p-6 rounded-2xl shadow-xl border border-gray-100 text-center">
+                            <svg class="w-10 h-10 mx-auto text-blue-600 mb-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h12v-1.5M3.75 3h16.5v11.25c0 1.242-.98 2.25-2.218 2.25H6.968a2.25 2.25 0 01-2.218-2.25V3z" /></svg>
+                            <h3 class="text-lg font-bold text-blue-700 mb-2">Libre acceso al conocimiento</h3>
+                            <p class="text-sm text-gray-700 leading-relaxed">Trabajamos para asegurar que el conocimiento esté disponible <b class="font-semibold">sin barreras</b>, para todas las personas.</p>
                         </div>
-                        <div class="flex-1 border-l-0 sm:border-l-2 border-gray-200 pl-0 sm:pl-8">
-                            <p class="text-lg text-gray-700 leading-relaxed">
-                                Apertura, colaboración, transparencia e independencia guían nuestro trabajo diario.
-                            </p>
+                        <div class="bg-white p-6 rounded-2xl shadow-xl border border-gray-100 text-center">
+                            <svg class="w-10 h-10 mx-auto text-purple-600 mb-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m-4.682 2.72a3 3 0 01-4.682-2.72 9.094 9.094 0 013.741.479m-3.741-.479a9.094 9.094 0 00-3.741.479 3 3 0 004.682 2.72M12 12.75a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                            <h3 class="text-lg font-bold text-purple-700 mb-2">Colaboración</h3>
+                            <p class="text-sm text-gray-700 leading-relaxed">Creemos que el conocimiento se construye de forma <b class="font-semibold">comunitaria</b>, promoviendo instancias para compartir saberes.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-2xl shadow-xl border border-gray-100 text-center">
+                            <svg class="w-10 h-10 mx-auto text-green-600 mb-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19.5c.39-.39.39-1.02 0-1.41a1.5 1.5 0 010-2.12c.39-.39 1.02-.39 1.41 0l3.54 3.54a1 1 0 001.41 0l8.49-8.49c.39-.39.39-1.02 0-1.41a1.5 1.5 0 010-2.12c.39-.39 1.02-.39 1.41 0l3.54 3.54a1 1 0 001.41 0l8.49-8.49" /><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                            <h3 class="text-lg font-bold text-green-700 mb-2">Inclusión</h3>
+                            <p class="text-sm text-gray-700 leading-relaxed">Nos nutrimos de la <b class="font-semibold">diversidad</b>, donde todos/as tienen la posibilidad de participar sin importar su origen, género o ubicación.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-2xl shadow-xl border border-gray-100 text-center">
+                             <svg class="w-10 h-10 mx-auto text-red-600 mb-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" /></svg>
+                            <h3 class="text-lg font-bold text-red-700 mb-2">Cambio Cultural</h3>
+                            <p class="text-sm text-gray-700 leading-relaxed">Trabajamos por una <b class="font-semibold">transformación cultural</b>, consagrando el acceso al conocimiento como un derecho esencial en Chile.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- === INICIO: Separador Visual Ancho (COMO EN INDEX) === -->
+        <!-- Separador Decorativo -->
         <div class="py-12 md:py-16 bg-gradient-to-r from-[#5748b5] via-[#308557] to-[#0e65c0] relative overflow-hidden">
-            <!-- Textura de fondo con opacidad (CAMBIO: estrellas) -->
             <div class="absolute inset-0 opacity-10" style="background-image: url('data:image/svg+xml,%3Csvg width="200" height="200" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" stroke="%23ffffff" stroke-width="1"%3E%3Cpath d="M50 0 V20 M50 100 V80 M0 50 H20 M100 50 H80 M35.857 35.857 L42.928 42.928 M64.143 64.143 L57.072 57.072 M35.857 64.143 L42.928 57.072 M64.143 35.857 L57.072 42.928" /%3E%3C/g%3E%3C/svg%3E'); background-size: 200px 200px; background-position: center;"></div>
             
-            <!-- Motivo central de chispas -->
             <div class="container mx-auto px-4 lg:px-6 relative z-10">
                 <div class="flex items-center justify-center space-x-4 max-w-lg mx-auto">
                     <div class="h-px flex-grow rounded-full bg-white/30"></div>
@@ -448,10 +407,63 @@
                 </div>
             </div>
         </div>
-        <!-- === FIN: Separador Visual Ancho === -->
+        
+        <!-- Sección Objetivos -->
+        <section class="py-12 md:py-16 section-bg-ornament-dots">
+            <div class="container mx-auto px-4 lg:px-6">
+                <div class="text-center mb-12 max-w-3xl mx-auto">
+                    <h2 class="text-3xl lg:text-4xl font-extrabold text-gray-900 mt-4">
+                        Nuestros <span style="color: #308557;">Objetivos</span>
+                    </h2>
+                </div>
+                
+                <ul class="max-w-4xl mx-auto space-y-4">
+                    <li class="flex items-start gap-3">
+                        <svg class="w-6 h-6 flex-shrink-0 mt-1" style="color: #5748b5;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        <span class="text-base text-gray-700 leading-relaxed">Formar <b class="font-semibold text-gray-800">nuevos usuarios</b> (creadores y lectores) para los proyectos Wikimedia, con énfasis en quienes no están participando.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <svg class="w-6 h-6 flex-shrink-0 mt-1" style="color: #5748b5;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        <span class="text-base text-gray-700 leading-relaxed"><b class="font-semibold text-gray-800">Acompañar</b> a quienes ya usan las plataformas Wikimedia, para mejorar sus experiencias y fomentar su permanencia.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <svg class="w-6 h-6 flex-shrink-0 mt-1" style="color: #5748b5;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        <span class="text-base text-gray-700 leading-relaxed"><b class="font-semibold text-gray-800">Promover el uso</b> y la filosofía del conocimiento libre en áreas prioritarias como <i class="text-blue-700">educación</i>, <i class="text-green-700">cultura</i>, <i class="text-purple-700">ciencia</i> y <i class="text-red-700">acceso a la información</i>.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <svg class="w-6 h-6 flex-shrink-0 mt-1" style="color: #5748b5;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        <span class="text-base text-gray-700 leading-relaxed"><b class="font-semibold text-gray-800">Colaborar</b> con otras instituciones, locales e internacionales, para difundir la filosofía del movimiento Wikimedia.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <svg class="w-6 h-6 flex-shrink-0 mt-1" style="color: #5748b5;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        <span class="text-base text-gray-700 leading-relaxed"><b class="font-semibold text-gray-800">Fomentar la creación</b> de contenidos locales para plataformas Wikimedia junto a comunidades a lo largo de Chile.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <svg class="w-6 h-6 flex-shrink-0 mt-1" style="color: #5748b5;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        <span class="text-base text-gray-700 leading-relaxed"><b class="font-semibold text-gray-800">Incidir a favor</b> de la filosofía Wikimedia y del conocimiento abierto entre tomadores de decisiones e instituciones de interés.</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
 
-        <!-- Sección Nuestro Equipo y Directorio (UNIFICADAS) -->
-        <!-- CAMBIO: Fondo cambiado a 'section-bg-ornament-dots' -->
+        <!-- Separador Decorativo -->
+        <div class="py-12 md:py-16 bg-gradient-to-r from-[#5748b5] via-[#308557] to-[#0e65c0] relative overflow-hidden">
+            <div class="absolute inset-0 opacity-20" style="background-image: url('data:image/svg+xml,%3Csvg width="150" height="150" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="%23ffffff"%3E%3Ccircle cx="50" cy="50" r="5" /%3E%3Ccircle cx="35" cy="35" r="5" /%3E%3Ccircle cx="65" cy="35" r="5" /%3E%3Ccircle cx="35" cy="65" r="5" /%3E%3Ccircle cx="65" cy="65" r="5" /%3E%3Ccircle cx="50" cy="20" r="5" /%3E%3Ccircle cx="50" cy="80" r="5" /%3E%3C/g%3E%3C/svg%3E'); background-size: 150px 150px; background-position: center 20px;"></div>
+            
+            <div class="container mx-auto px-4 lg:px-6 relative z-10">
+                <div class="flex items-center justify-center space-x-4 max-w-lg mx-auto">
+                    <div class="h-px flex-grow rounded-full bg-white/30"></div>
+                    <div class="flex-shrink-0 flex gap-3 items-center text-white">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M50 0L61.2265 38.7735L100 50L61.2265 61.2265L50 100L38.7735 61.2265L0 50L38.7735 38.7735L50 0Z" /></svg>
+                        <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M50 0L61.2265 38.7735L100 50L61.2265 61.2265L50 100L38.7735 61.2265L0 50L38.7735 38.7735L50 0Z" /></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M50 0L61.2265 38.7735L100 50L61.2265 61.2265L50 100L38.7735 61.2265L0 50L38.7735 38.7735L50 0Z" /></svg>
+                    </div>
+                    <div class="h-px flex-grow rounded-full bg-white/30"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección Equipo y Directorio -->
         <section class="py-12 md:py-16 section-bg-ornament-dots">
             <div class="container mx-auto px-4 lg:px-6">
                 <div class="text-center mb-10 max-w-3xl mx-auto">
@@ -463,269 +475,288 @@
                     </p>
                 </div>
                 
-                <!-- Grilla de Equipo -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
-                    
-                    <!-- Miembro de Equipo 1 (Profesional) -->
-                    <div class="bg-white rounded-2xl shadow-xl shadow-gray-200/50 border border-gray-100 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 overflow-hidden">
-                        <!-- CAMBIO: 'object-cover' por 'object-contain' y fondo 'bg-gray-100' -->
-                        <img src="/Patricia_Díaz_Rubio_-_WMCL_(cropped).jpg" alt="Foto de Patricia Díaz Rubio" class="w-full h-48 object-contain object-center bg-gray-100">
-                        <div class="p-6 text-center">
-                            <h4 class="text-xl font-bold text-gray-900">Patricia Díaz Rubio</h4>
-                            <span class="block text-sm font-semibold mt-1" style="color: #5748b5;">Directora Ejecutiva</span>
-                            <div class="mt-5 flex justify-center gap-4 border-t border-gray-100 pt-4">
-                                <a href="https://meta.wikimedia.org/wiki/User:PDiazR_(WMCL)" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-gray-700" aria-label="Perfil de Meta-Wiki" title="Perfil de Meta-Wiki">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
-                                </a>
-                                <a href="mailto:patricia.diaz at wikimediachile.cl" class="text-gray-400 hover:text-gray-700" aria-label="Correo electrónico" title="Correo electrónico">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Miembro de Equipo 2 (Profesional) -->
-                    <div class="bg-white rounded-2xl shadow-xl shadow-gray-200/50 border border-gray-100 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 overflow-hidden">
-                        <!-- CAMBIO: 'object-cover' por 'object-contain' y fondo 'bg-gray-100' -->
-                        <img src="/Carla_Toro_Fernández_-_WMCL_(cropped).jpg" alt="Foto de Carla Toro Fernández" class="w-full h-48 object-contain object-center bg-gray-100">
-                        <div class="p-6 text-center">
-                            <h4 class="text-xl font-bold text-gray-900">Carla Toro Fernández</h4>
-                            <span class="block text-sm font-semibold mt-1" style="color: #5748b5;">Subdirectora Ejecutiva</span>
-                            <div class="mt-5 flex justify-center gap-4 border-t border-gray-100 pt-4">
-                                <a href="https://meta.wikimedia.org/wiki/User:Cftoro_(WMCL)" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-gray-700" aria-label="Perfil de Meta-Wiki" title="Perfil de Meta-Wiki">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
-                                </a>
-                                <a href="mailto:carla.toro at @wikimedia.cl" class="text-gray-400 hover:text-gray-700" aria-label="Correo electrónico" title="Correo electrónico">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Miembro de Equipo 3 (Profesional) -->
-                    <div class="bg-white rounded-2xl shadow-xl shadow-gray-200/50 border border-gray-100 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 overflow-hidden">
-                        <!-- CAMBIO: 'object-cover' por 'object-contain' y fondo 'bg-gray-100' -->
-                        <img src="/Patricio_Romero_-_WMCL.jpg" alt="Foto de Patricio Romero" class="w-full h-48 object-contain object-center bg-gray-100">
-                        <div class="p-6 text-center">
-                            <h4 class="text-xl font-bold text-gray-900">Patricio Romero</h4>
-                            <span class="block text-sm font-semibold mt-1" style="color: #308557;">Director de Educación</span>
-                            <div class="mt-5 flex justify-center gap-4 border-t border-gray-100 pt-4">
-                                <a href="https://meta.wikimedia.org/wiki/User:Promeroy_(WMCL)" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-gray-700" aria-label="Perfil de Meta-Wiki" title="Perfil de Meta-Wiki">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
-                                </a>
-                                <a href="mailto:patricio.romero(_AT_)wikimediachile.cl" class="text-gray-400 hover:text-gray-700" aria-label="Correo electrónico" title="Correo electrónico">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Miembro de Equipo 4 (Profesional) -->
-                    <div class="bg-white rounded-2xl shadow-xl shadow-gray-200/50 border border-gray-100 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 overflow-hidden">
-                        <!-- CAMBIO: 'object-cover' por 'object-contain' y fondo 'bg-gray-100' -->
-                        <img src="/Pablo_Cartes_-_WMCL.jpg" alt="Foto de Pablo Cartes" class="w-full h-48 object-contain object-center bg-gray-100">
-                        <div class="p-6 text-center">
-                            <h4 class="text-xl font-bold text-gray-900">Pablo Cartes</h4>
-                            <span class="block text-sm font-semibold mt-1" style="color: #308557;">Director de Contenidos Locales</span>
-                            <div class="mt-5 flex justify-center gap-4 border-t border-gray-100 pt-4">
-                                <a href="https://meta.wikimedia.org/wiki/User:Pcartes_(WMCL)" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-gray-700" aria-label="Perfil de Meta-Wiki" title="Perfil de Meta-Wiki">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
-                                </a>
-                                <a href="mailto:pablo.cartes(_AT_)wikimediachile.cl" class="text-gray-400 hover:text-gray-700" aria-label="Correo electrónico" title="Correo electrónico">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Miembro de Equipo 5 (Profesional) -->
-                    <div class="bg-white rounded-2xl shadow-xl shadow-gray-200/50 border border-gray-100 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 overflow-hidden">
-                        <!-- CAMBIO: 'object-cover' por 'object-contain' y fondo 'bg-gray-100' -->
-                        <img src="/Catalina_Frigerio_-_Wikimedia_Chile.jpg" alt="Foto de Catalina Frigerio" class="w-full h-48 object-contain object-center bg-gray-100">
-                        <div class="p-6 text-center">
-                            <h4 class="text-xl font-bold text-gray-900">Catalina Frigerio</h4>
-                            <span class="block text-sm font-semibold mt-1" style="color: #308557;">Directora de Incidencia</span>
-                            <div class="mt-5 flex justify-center gap-4 border-t border-gray-100 pt-4">
-                                <a href="https://meta.wikimedia.org/wiki/User:Catafrida_(WMCL)" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-gray-700" aria-label="Perfil de Meta-Wiki" title="Perfil de Meta-Wiki">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
-                                </a>
-                                <a href="mailto:catalina.frigerio at @wikimedia.cl" class="text-gray-400 hover:text-gray-700" aria-label="Correo electrónico" title="Correo electrónico">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Miembro de Equipo 6 (Profesional) -->
-                    <div class="bg-white rounded-2xl shadow-xl shadow-gray-200/50 border border-gray-100 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 overflow-hidden">
-                        <!-- CAMBIO: 'object-cover' por 'object-contain' y fondo 'bg-gray-100' -->
-                        <img src="/Michelle_Collipal_-_WMCL.jpg" alt="Foto de Michelle Colilpal Martínez" class="w-full h-48 object-contain object-center bg-gray-100">
-                        <div class="p-6 text-center">
-                            <h4 class="text-xl font-bold text-gray-900">Michelle Colilpal Martínez</h4>
-                            <span class="block text-sm font-semibold mt-1" style="color: #0e65c0;">Directora de Comunicaciones</span>
-                            <div class="mt-5 flex justify-center gap-4 border-t border-gray-100 pt-4">
-                                <a href="https://meta.wikimedia.org/wiki/User:Mimartinez_(WMCL)" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-gray-700" aria-label="Perfil de Meta-Wiki" title="Perfil de Meta-Wiki">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
-                                </a>
-                                <a href="mailto:michelle.collipal at @wikimedia.cl" class="text-gray-400 hover:text-gray-700" aria-label="Correo electrónico" title="Correo electrónico">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Miembro de Equipo 7 (Profesional) -->
-                    <!-- CAMBIO: Tarjeta de Carla (Tecnologías) ELIMINADA -->
-                    
-                    <!-- Miembro de Equipo 8 (Profesional) -->
-                    <div class="bg-white rounded-2xl shadow-xl shadow-gray-200/50 border border-gray-100 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 overflow-hidden">
-                        <!-- CAMBIO: 'object-cover' por 'object-contain' y fondo 'bg-gray-100' -->
-                        <img src="/Katherine_Bahamondes_-_WMCL.jpg" alt="Foto de Katherine Bahamondes" class="w-full h-48 object-contain object-center bg-gray-100">
-                        <div class="p-6 text-center">
-                            <h4 class="text-xl font-bold text-gray-900">Katherine Bahamondes</h4>
-                            <span class="block text-sm font-semibold mt-1" style="color: #0e65c0;">Encargada de Redes Comunitarias</span>
-                            <div class="mt-5 flex justify-center gap-4 border-t border-gray-100 pt-4">
-                                <a href="https://meta.wikimedia.org/wiki/User:Kathie_(WMCL)" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-gray-700" aria-label="Perfil de Meta-Wiki" title="Perfil de Meta-Wiki">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
-                                </a>
-                                <a href="mailto:cristian.leal(_AT_)wikimedia.cl" class="text-gray-400 hover:text-gray-700" aria-label="Correo electrónico" title="Correo electrónico">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Miembro de Equipo 9 (Profesional) -->
-                    <div class="bg-white rounded-2xl shadow-xl shadow-gray-200/50 border border-gray-100 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 overflow-hidden">
-                        <!-- CAMBIO: 'object-cover' por 'object-contain' y fondo 'bg-gray-100' -->
-                        <img src="/Cristian_Leal_-_WMCL.jpg" alt="Foto de Cristian Leal" class="w-full h-48 object-contain object-center bg-gray-100">
-                        <div class="p-6 text-center">
-                            <h4 class="text-xl font-bold text-gray-900">Cristian Leal</h4>
-                            <span class="block text-sm font-semibold mt-1" style="color: #5748b5;">Encargado de Gestión y Adm.</span>
-                            <div class="mt-5 flex justify-center gap-4 border-t border-gray-100 pt-4">
-                                <a href="https://meta.wikimedia.org/wiki/User:CristianL(WMCL)" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-gray-700" aria-label="Perfil de Meta-Wiki" title="Perfil de Meta-Wiki">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
-                                </a>
-                                <a href="mailto:[EMAIL_AQUI]" class="text-gray-400 hover:text-gray-700" aria-label="Correo electrónico" title="Correo electrónico">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- Título Directorio -->
-                <div class="text-center mt-16 mb-10 max-w-3xl mx-auto">
+                <!-- Directorio -->
+                <div class="text-center mb-12 max-w-3xl mx-auto">
                     <h3 class="text-3xl lg:text-4xl font-extrabold text-gray-900 mt-4">
                         Nuestro <span style="color: #5748b5;">Directorio</span>
                     </h3>
                 </div>
 
-                <!-- Grilla de Directorio -->
+                <!-- CAMBIO: Directorio ahora usa el estilo de imagen grande (rectangular) -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-                    <!-- Miembro Directorio 1 -->
-                    <!-- CAMBIO: Diseño de tarjeta modificado. Icono SVG añadido, foto y links eliminados. -->
-                    <div class="bg-white rounded-2xl p-8 text-center border border-gray-200 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-                        <svg class="w-12 h-12 mx-auto mb-4 text-purple-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.31h5.362c.518 0 .73.684.348 1.01l-4.36 3.19a.563.563 0 00-.182.635l1.658 5.348a.562.562 0 01-.842.615l-4.37-3.19a.563.563 0 00-.652 0l-4.37 3.19a.562.562 0 01-.842-.615l1.658-5.348a.563.563 0 00-.182-.635l-4.36-3.19a.563.563 0 01.348-1.01h5.362a.563.563 0 00.475-.31l2.125-5.112z" />
-                        </svg>
-                        <h4 class="text-xl font-bold text-gray-900">Martín Pérez Comisso</h4>
-                        <span class="block text-sm font-semibold text-purple-600 mt-1">Presidente</span>
+                    <!-- Martín Pérez Comisso -->
+                    <div class="bg-white rounded-2xl shadow-xl shadow-gray-200/50 border border-gray-100 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 overflow-hidden">
+                        <img src="/Martín_Pérez_Comisso.jpg" alt="Foto de Martín Pérez Comisso" class="directory-member-img">
+                        <div class="p-6 text-center">
+                            <h4 class="text-xl font-bold text-gray-900">Martín Pérez Comisso</h4>
+                            <span class="block text-sm font-semibold text-purple-600 mt-1">Presidente</span>
+                            <div class="collapsible-content">
+                                <p class="text-sm text-gray-600 mt-4 leading-relaxed text-left">
+                                    Químico y Magíster en Química (UCH) y <b class="font-semibold text-gray-700">Doctor en Estudios de Ciencia y Tecnología</b> por la Universidad Estatal de Arizona (ASU). Ha trabajado con miembros de Wikimedia Chile en proyectos educativos desde 2010 y es socio del capítulo desde 2015. Se integró al Directorio en 2023 y fue elegido como Presidente en 2024.
+                                </p>
+                            </div>
+                            <button class="read-more-btn text-sm mt-4">
+                                <svg class="icon icon-plus" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>
+                                <svg class="icon icon-minus" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15" /></svg>
+                                <span class="ml-1 button-text">Leer más</span>
+                            </button>
+                        </div>
                     </div>
-                    <!-- Miembro Directorio 2 -->
-                    <!-- CAMBIO: Diseño de tarjeta modificado. Icono SVG añadido, foto y links eliminados. -->
-                    <div class="bg-white rounded-2xl p-8 text-center border border-gray-200 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-                        <svg class="w-12 h-12 mx-auto mb-4 text-purple-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
-                        </svg>
-                        <h4 class="text-xl font-bold text-gray-900">Céline Assemat</h4>
-                        <span class="block text-sm font-semibold text-purple-600 mt-1">Secretaria</span>
+                    <!-- Céline Assemat -->
+                    <div class="bg-white rounded-2xl shadow-xl shadow-gray-200/50 border border-gray-100 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 overflow-hidden">
+                        <img src="/Céline_Assemat.jpg" alt="Foto de Céline Assemat" class="directory-member-img">
+                        <div class="p-6 text-center">
+                            <h4 class="text-xl font-bold text-gray-900">Céline Assemat</h4>
+                            <span class="block text-sm font-semibold text-purple-600 mt-1">Secretaria</span>
+                            <div class="collapsible-content">
+                                <p class="text-sm text-gray-600 mt-4 leading-relaxed text-left">
+                                    Ingeniera eléctrica titulada de Supélec (Francia) con <b class="font-semibold text-gray-700">MSc en ingeniería de potencia eléctrica</b> de KTH (Suecia). Empezó a editar Wikipedia en francés y en español en 2018. En 2022 se incorporó a la iniciativa <i class="text-purple-600">Les sans PagEs</i> (organización francófona que busca reducir la brecha de género) y en 2024 se integró al Directorio de Wikimedia Chile como secretaria.
+                                </p>
+                            </div>
+                            <button class="read-more-btn text-sm mt-4">
+                                <svg class="icon icon-plus" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>
+                                <svg class="icon icon-minus" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15" /></svg>
+                                <span class="ml-1 button-text">Leer más</span>
+                            </button>
+                        </div>
                     </div>
-                    <!-- Miembro Directorio 3 -->
-                    <!-- CAMBIO: Diseño de tarjeta modificado. Icono SVG añadido, foto y links eliminados. -->
-                    <div class="bg-white rounded-2xl p-8 text-center border border-gray-200 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-                        <svg class="w-12 h-12 mx-auto mb-4 text-purple-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h12M3.75 3h16.5v11.25c0 1.242-.984 2.25-2.25 2.25h-13.5A2.25 2.25 0 013.75 14.25V3zM3.75 21h16.5M12 16.5v4.5m-3.75-4.5v4.5m7.5-4.5v4.5M3.75 12h16.5" />
-                        </svg>
-                        <h4 class="text-xl font-bold text-gray-900">Luis Cristóbal Carrasco</h4>
-                        <span class="block text-sm font-semibold text-purple-600 mt-1">Tesorero</span>
+                    <!-- Luis Cristóbal Carrasco -->
+                    <div class="bg-white rounded-2xl shadow-xl shadow-gray-200/50 border border-gray-100 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 overflow-hidden">
+                        <img src="/Luis_Cristóbal_Carrasco_2025.jpg" alt="Foto de Luis Cristóbal Carrasco" class="directory-member-img">
+                        <div class="p-6 text-center">
+                            <h4 class="text-xl font-bold text-gray-900">Luis Cristóbal Carrasco</h4>
+                            <span class="block text-sm font-semibold text-purple-600 mt-1">Tesorero</span>
+                            <div class="collapsible-content">
+                                <p class="text-sm text-gray-600 mt-4 leading-relaxed text-left">
+                                    Biólogo Marino con mención en Recursos Naturales y Derecho Ambiental y <b class="font-semibold text-gray-700">Magíster en Políticas Públicas</b> (PUC). Le interesan las políticas públicas que protegen y gestionan la biodiversidad. Es editor de Wikipedia en español desde 2008 y forma parte del Directorio de Wikimedia Chile desde el año 2020.
+                                </p>
+                            </div>
+                            <button class="read-more-btn text-sm mt-4">
+                                <svg class="icon icon-plus" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>
+                                <svg class="icon icon-minus" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15" /></svg>
+                                <span class="ml-1 button-text">Leer más</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Equipo Profesional -->
+                <div class="text-center mt-16 mb-10 max-w-3xl mx-auto">
+                    <h3 class="text-3xl lg:text-4xl font-extrabold text-gray-900 mt-4">
+                        Nuestro <span style="color: #308557;">Equipo Profesional</span>
+                    </h3>
+                </div>
+
+                <!-- CAMBIO: Equipo Profesional ahora usa el estilo de imagen circular -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+                    
+                    <!-- Patricia Díaz Rubio -->
+                    <div class="bg-white rounded-2xl p-8 text-center border border-gray-200 shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                        <img src="Patricia_Díaz_Rubio_-_WMCL_(cropped).jpg" alt="Foto de Patricia Díaz Rubio" class="team-member-img-circle">
+                        <h4 class="text-xl font-bold text-gray-900">Patricia Díaz Rubio</h4>
+                        <span class="block text-sm font-semibold mt-1" style="color: #5748b5;">Directora Ejecutiva</span>
+                        <div class="collapsible-content">
+                            <p class="text-sm text-gray-600 mt-4 leading-relaxed text-left">
+                                Comunicadora social y periodista (UCH), con estudios en <b class="font-semibold text-green-700">patrimonio cultural</b> (USACH). Tiene un magíster en Comunicación política local (U. de Orléans) y un magíster en Estudios del desarrollo (IEDES Panteón-Sorbona). Cuenta con amplia experiencia en gestión y difusión en proyectos de <i class="text-gray-700">cultura, patrimonio y memoria</i> en formatos y lenguajes digitales. Es parte de la red Open Culture de Creative Commons.
+                            </p>
+                        </div>
+                        <button class="read-more-btn text-sm mt-4">
+                            <svg class="icon icon-plus" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>
+                            <svg class="icon icon-minus" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15" /></svg>
+                            <span class="ml-1 button-text">Leer más</span>
+                        </button>
+                        <div class="mt-5 flex justify-center gap-4 border-t border-gray-100 pt-4">
+                            <a href="https://meta.wikimedia.org/wiki/User:PDiazR_(WMCL)" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-gray-700" aria-label="Perfil de Meta-Wiki" title="Perfil de Meta-Wiki">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
+                            </a>
+                            <a href="mailto:patricia.diaz@wikimediachile.cl" class="text-gray-400 hover:text-gray-700" aria-label="Correo electrónico" title="Correo electrónico">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Carla Toro Fernández -->
+                    <div class="bg-white rounded-2xl p-8 text-center border border-gray-200 shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                        <img src="Carla_Toro_Fernández_-_WMCL_(cropped).jpg" alt="Foto de Carla Toro Fernández" class="team-member-img-circle">
+                        <h4 class="text-xl font-bold text-gray-900">Carla Toro Fernández</h4>
+                        <span class="block text-sm font-semibold mt-1" style="color: #5748b5;">Subdirectora Ejecutiva | Directora de Tecnologías</span>
+                        <div class="collapsible-content">
+                            <p class="text-sm text-gray-600 mt-4 leading-relaxed text-left">
+                                Astrónoma (PUC) y <b class="font-semibold text-gray-700">Magíster en Comunicación Social</b> (UCH). Es editora voluntaria de Wikimedia desde 2017. Sus temas de especialización son la <i class="text-purple-600">divulgación científica</i>, la <i class="text-purple-600">Ciencia Abierta</i> y el uso de <b class="font-semibold text-gray-700">datos abiertos</b> para fines investigativos, mediante el uso de plataformas como Wikidata. 
+                            </p>
+                        </div>
+                        <button class="read-more-btn text-sm mt-4">
+                            <svg class="icon icon-plus" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>
+                            <svg class="icon icon-minus" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15" /></svg>
+                            <span class="ml-1 button-text">Leer más</span>
+                        </button>
+                        <div class="mt-5 flex justify-center gap-4 border-t border-gray-100 pt-4">
+                            <a href="https://meta.wikimedia.org/wiki/User:Cftoro_(WMCL)" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-gray-700" aria-label="Perfil de Meta-Wiki" title="Perfil de Meta-Wiki">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
+                            </a>
+                            <a href="mailto:carla.toro@wikimedia.cl" class="text-gray-400 hover:text-gray-700" aria-label="Correo electrónico" title="Correo electrónico">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Cristian Leal Durán -->
+                    <div class="bg-white rounded-2xl p-8 text-center border border-gray-200 shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                        <img src="Cristian_Leal_-_WMCL.jpg" alt="Foto de Cristian Leal" class="team-member-img-circle">
+                        <h4 class="text-xl font-bold text-gray-900">Cristian Leal Durán</h4>
+                        <span class="block text-sm font-semibold mt-1" style="color: #5748b5;">Encargado de Administración y Gestión</span>
+                        <div class="collapsible-content">
+                            <p class="text-sm text-gray-600 mt-4 leading-relaxed text-left">
+                                <b class="font-semibold text-gray-700">Administrador público (UV) y gestor cultural.</b> Ha trabajado junto a diversas comunidades gestionando talleres con enfoques territoriales y en iniciativas relacionadas con la infancia. Posee experiencia en <i class="text-gray-700">coordinación, evaluación y formulación de proyectos</i> financiados por fondos públicos, en gestión administrativa y en trabajo en bibliotecas. También colabora con medios literarios.
+                            </p>
+                        </div>
+                        <button class="read-more-btn text-sm mt-4">
+                            <svg class="icon icon-plus" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>
+                            <svg class="icon icon-minus" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15" /></svg>
+                            <span class="ml-1 button-text">Leer más</span>
+                        </button>
+                        <div class="mt-5 flex justify-center gap-4 border-t border-gray-100 pt-4">
+                            <a href="https://meta.wikimedia.org/wiki/User:CristianL(WMCL)" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-gray-700" aria-label="Perfil de Meta-Wiki" title="Perfil de Meta-Wiki">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
+                            </a>
+                            <a href="mailto:cristian.leal@wikimedia.cl" class="text-gray-400 hover:text-gray-700" aria-label="Correo electrónico" title="Correo electrónico">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Patricio Romero Yunge -->
+                    <div class="bg-white rounded-2xl p-8 text-center border border-gray-200 shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                        <img src="Patricio_Romero_-_WMCL.jpg" alt="Foto de Patricio Romero" class="team-member-img-circle">
+                        <h4 class="text-xl font-bold text-gray-900">Patricio Romero Yunge</h4>
+                        <span class="block text-sm font-semibold mt-1" style="color: #308557;">Director de Educación</span>
+                        <div class="collapsible-content">
+                            <p class="text-sm text-gray-600 mt-4 leading-relaxed text-left">
+                                Licenciado en Educación y <b class="font-semibold text-gray-700">profesor de Inglés</b> (UMCE), <i class="text-purple-600">Google Certified Trainer</i> y <i class="text-purple-600">Google Educator</i>. Se dedica a la búsqueda de metodologías que puedan integrar de manera efectiva la tecnología digital dentro de la sala de clases, híbrida, presencial y virtualmente. Posee experiencia en el acompañamiento de docentes de diversas áreas para el diseño e implementación de experiencias de aprendizaje enfocadas en el estudiante.
+                            </p>
+                        </div>
+                        <button class="read-more-btn text-sm mt-4">
+                            <svg class="icon icon-plus" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>
+                            <svg class="icon icon-minus" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15" /></svg>
+                            <span class="ml-1 button-text">Leer más</span>
+                        </button>
+                        <div class="mt-5 flex justify-center gap-4 border-t border-gray-100 pt-4">
+                            <a href="https://meta.wikimedia.org/wiki/User:Promeroy_(WMCL)" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-gray-700" aria-label="Perfil de Meta-Wiki" title="Perfil de Meta-Wiki">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
+                            </a>
+                            <a href="mailto:patricio.romero@wikimediachile.cl" class="text-gray-400 hover:text-gray-700" aria-label="Correo electrónico" title="Correo electrónico">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Pablo Cartes Muñoz -->
+                    <div class="bg-white rounded-2xl p-8 text-center border border-gray-200 shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                        <img src="Pablo_Cartes_-_WMCL.jpg" alt="Foto de Pablo Cartes" class="team-member-img-circle">
+                        <h4 class="text-xl font-bold text-gray-900">Pablo Cartes Muñoz</h4>
+                        <span class="block text-sm font-semibold mt-1" style="color: #308557;">Director de Territorios y Contenidos Locales</span>
+                        <div class="collapsible-content">
+                            <p class="text-sm text-gray-600 mt-4 leading-relaxed text-left">
+                                Comunicador social y periodista (UCH). Tiene un diplomado en <b class="font-semibold text-gray-700">Derechos Humanos para Periodistas</b> por parte de la Comisión Interamericana de Derechos Humanos (CIDH). Cuenta con experiencia en la generación de contenidos sobre <i class="text-purple-600">DD.HH y memoria</i>, en alfabetización mediática junto a comunidades educativas de diferentes territorios, y en la gestión de proyectos y alianzas en Chile y América Latina.
+                            </p>
+                        </div>
+                        <button class="read-more-btn text-sm mt-4">
+                            <svg class="icon icon-plus" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>
+                            <svg class="icon icon-minus" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15" /></svg>
+                            <span class="ml-1 button-text">Leer más</span>
+                        </button>
+                        <div class="mt-5 flex justify-center gap-4 border-t border-gray-100 pt-4">
+                            <a href="https://meta.wikimedia.org/wiki/User:Pcartes_(WMCL)" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-gray-700" aria-label="Perfil de Meta-Wiki" title="Perfil de Meta-Wiki">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
+                            </a>
+                            <a href="mailto:pablo.cartes@wikimediachile.cl" class="text-gray-400 hover:text-gray-700" aria-label="Correo electrónico" title="Correo electrónico">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Michelle Collipal Martínez -->
+                    <div class="bg-white rounded-2xl p-8 text-center border border-gray-200 shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                        <img src="Michelle_Collipal_-_WMCL.jpg" alt="Foto de Michelle Colilpal Martínez" class="team-member-img-circle">
+                        <h4 class="text-xl font-bold text-gray-900">Michelle Collipal Martínez</h4>
+                        <span class="block text-sm font-semibold mt-1" style="color: #0e65c0;">Directora de Comunicaciones</span>
+                        <div class="collapsible-content">
+                            <p class="text-sm text-gray-600 mt-4 leading-relaxed text-left">
+                                Comunicadora social y periodista (UCH). Tiene un diplomado en <b class="font-semibold text-gray-700">Comunicación Pública Internacional</b> (UCH – HCLA, Universidad de Heidelberg). Ha trabajado en diferentes áreas de la comunicación: <i class="text-gray-700">medios comunitarios, medios nacionales, comunicación digital y academia</i>. Con experiencia en comunicación estratégica, gestión de prensa y producción de noticias.
+                            </p>
+                        </div>
+                        <button class="read-more-btn text-sm mt-4">
+                            <svg class="icon icon-plus" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>
+                            <svg class="icon icon-minus" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15" /></svg>
+                            <span class="ml-1 button-text">Leer más</span>
+                        </button>
+                        <div class="mt-5 flex justify-center gap-4 border-t border-gray-100 pt-4">
+                            <a href="https://meta.wikimedia.org/wiki/User:Mimartinez_(WMCL)" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-gray-700" aria-label="Perfil de Meta-Wiki" title="Perfil de Meta-Wiki">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
+                            </a>
+                            <a href="mailto:michelle.collipal@wikimedia.cl" class="text-gray-400 hover:text-gray-700" aria-label="Correo electrónico" title="Correo electrónico">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Katherine Bahamondes Vidal -->
+                    <div class="bg-white rounded-2xl p-8 text-center border border-gray-200 shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                        <img src="Katherine_Bahamondes_-_WMCL.jpg" alt="Foto de Katherine Bahamondes" class="team-member-img-circle">
+                        <h4 class="text-xl font-bold text-gray-900">Katherine Bahamondes Vidal</h4>
+                        <span class="block text-sm font-semibold mt-1" style="color: #0e65c0;">Encargada de Redes Comunitarias</span>
+                        <div class="collapsible-content">
+                            <p class="text-sm text-gray-600 mt-4 leading-relaxed text-left">
+                                Comunicadora social y periodista (ULS). Con experiencia en <b class="font-semibold text-gray-700">investigación y divulgación científica</b>. Se ha desempeñado en organismos como el Servicio Nacional de la Mujer y Equidad de Género (SernamEG) y en la Oficina de Divulgación Científica de la Universidad de La Serena. Ha trabajado en iniciativas relacionadas con la <i class="text-purple-600">defensa de la democracia, los derechos humanos, la libertad de expresión y la lucha contra la desinformación.</i>
+                            </p>
+                        </div>
+                        <button class="read-more-btn text-sm mt-4">
+                            <svg class="icon icon-plus" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>
+                            <svg class="icon icon-minus" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15" /></svg>
+                            <span class="ml-1 button-text">Leer más</span>
+                        </button>
+                        <div class="mt-5 flex justify-center gap-4 border-t border-gray-100 pt-4">
+                            <a href="https://meta.wikimedia.org/wiki/User:Kathie_(WMCL)" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-gray-700" aria-label="Perfil de Meta-Wiki" title="Perfil de Meta-Wiki">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
+                            </a>
+                            <a href="mailto:katherine.bahamondes@wikimedia.cl" class="text-gray-400 hover:text-gray-700" aria-label="Correo electrónico" title="Correo electrónico">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Catalina Frigerio Dattwyler -->
+                    <div class="bg-white rounded-2xl p-8 text-center border border-gray-200 shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                        <img src="Catalina_Frigerio_-_Wikimedia_Chile.jpg" alt="Foto de Catalina Frigerio" class="team-member-img-circle">
+                        <h4 class="text-xl font-bold text-gray-900">Catalina Frigerio Dattwyler</h4>
+                        <span class="block text-sm font-semibold mt-1" style="color: #308557;">Directora de Incidencia y Políticas Públicas</span>
+                        <div class="collapsible-content">
+                             <p class="text-sm text-gray-600 mt-4 leading-relaxed text-left">
+                                 Abogada (UCH) especializada en <b class="font-semibold text-gray-700">tecnología, privacidad y regulación</b>. Tiene un magíster en Análisis Económico del Derecho (Erasmus Mundus Programme) y un MPA en Tecnología Digital y Política (UCL), además de un diplomado en Propiedad Intelectual (PUC). Posee experiencia asesorando en temáticas de <i class="text-purple-600">datos personales y propiedad intelectual</i> y en proyectos de investigación relacionados con políticas públicas.
+                             </p>
+                        </div>
+                        <button class="read-more-btn text-sm mt-4">
+                            <svg class="icon icon-plus" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>
+                            <svg class="icon icon-minus" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15" /></svg>
+                            <span class="ml-1 button-text">Leer más</span>
+                        </button>
+                        <div class="mt-5 flex justify-center gap-4 border-t border-gray-100 pt-4">
+                            <a href="https://meta.wikimedia.org/wiki/User:Catafrida_(WMCL)" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-gray-700" aria-label="Perfil de Meta-Wiki" title="Perfil de Meta-Wiki">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
+                            </a>
+                            <a href="mailto:catalina.frigerio@wikimedia.cl" class="text-gray-400 hover:text-gray-700" aria-label="Correo electrónico" title="Correo electrónico">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- === INICIO: Separador Visual Ancho (SIN TEXTURA) === -->
-        <div class="py-12 md:py-16 bg-gradient-to-r from-[#5748b5] via-[#308557] to-[#0e65c0] relative overflow-hidden">
-            <!-- CAMBIO: Textura de fondo con opacidad (puntos) -->
-            <div class="absolute inset-0 opacity-20" style="background-image: url('data:image/svg+xml,%3Csvg width="150" height="150" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="%23ffffff"%3E%3Ccircle cx="50" cy="50" r="5" /%3E%3Ccircle cx="35" cy="35" r="5" /%3E%3Ccircle cx="65" cy="35" r="5" /%3E%3Ccircle cx="35" cy="65" r="5" /%3E%3Ccircle cx="65" cy="65" r="5" /%3E%3Ccircle cx="50" cy="20" r="5" /%3E%3Ccircle cx="50" cy="80" r="5" /%3E%3C/g%3E%3C/svg%3E'); background-size: 150px 150px; background-position: center 20px;"></div>
-            
-            <!-- Motivo central de chispas -->
-            <div class="container mx-auto px-4 lg:px-6 relative z-10">
-                <div class="flex items-center justify-center space-x-4 max-w-lg mx-auto">
-                    <div class="h-px flex-grow rounded-full bg-white/30"></div>
-                    <div class="flex-shrink-0 flex gap-3 items-center text-white">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M50 0L61.2265 38.7735L100 50L61.2265 61.2265L50 100L38.7735 61.2265L0 50L38.7735 38.7735L50 0Z" /></svg>
-                        <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M50 0L61.2265 38.7735L100 50L61.2265 61.2265L50 100L38.7735 61.2265L0 50L38.7735 38.7735L50 0Z" /></svg>
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M50 0L61.2265 38.7735L100 50L61.2265 61.2265L50 100L38.7735 61.2265L0 50L38.7735 38.7735L50 0Z" /></svg>
-                    </div>
-                    <div class="h-px flex-grow rounded-full bg-white/30"></div>
-                </div>
-            </div>
-        </div>
-        <!-- === FIN: Separador Visual Ancho === -->
-
-        <!-- Sección Transparencia y Memorias (NUEVA) -->
-        <!-- CAMBIO: Fondo cambiado a 'bg-gray-900' (color del footer) -->
-        <section class="py-12 md:py-16 bg-gray-900">
-            <div class="container mx-auto px-4 lg:px-6">
-                <div class="text-center mb-10 max-w-3xl mx-auto">
-                    <!-- CAMBIO: Texto a 'text-white' y 'text-blue-400' -->
-                    <h2 class="text-3xl lg:text-4xl font-extrabold text-white mt-4">
-                        Nuestro <span style="color: #60a5fa;">Compromiso</span>
-                    </h2>
-                    <!-- CAMBIO: Texto a 'text-gray-300' -->
-                    <p class="mt-6 text-base lg:text-lg text-gray-300 leading-relaxed">
-                        La transparencia es uno de nuestros valores fundamentales. Revisa nuestros documentos oficiales, estatutos y memorias anuales.
-                    </p>
-                </div>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-                    <!-- Memorias -->
-                    <!-- CAMBIO: Tarjeta a 'bg-white' con texto oscuro -->
-                    <a href="memorias.html" class="group block rounded-2xl p-8 bg-gray-800 shadow-xl shadow-black/10 border border-gray-700 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 hover:border-blue-400">
-                        <div class="flex items-center gap-4">
-                            <div class="w-12 h-12 bg-blue-600/20 rounded-xl flex items-center justify-center text-blue-400">
-                                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-bold text-white">Memorias Anuales</h3>
-                                <p class="text-gray-400 text-sm">Revisa nuestro impacto y gestión año a año.</p>
-                            </div>
-                            <span class="ml-auto text-blue-400 opacity-0 group-hover:opacity-100 transition-opacity">&rarr;</span>
-                        </div>
-                    </a>
-                    <!-- Transparencia -->
-                    <!-- CAMBIO: Tarjeta a 'bg-white' con texto oscuro -->
-                    <a href="transparencia.html" class="group block rounded-2xl p-8 bg-gray-800 shadow-xl shadow-black/10 border border-gray-700 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 hover:border-blue-400">
-                        <div class="flex items-center gap-4">
-                            <div class="w-12 h-12 bg-blue-600/20 rounded-xl flex items-center justify-center text-blue-400">
-                                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12 12 0 0012 21.054a12 12 0 008.618-15.016z"></path></svg>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-bold text-white">Transparencia</h3>
-                                <p class="text-gray-400 text-sm">Accede a nuestros estatutos y documentos legales.</p>
-                            </div>
-                            <span class="ml-auto text-blue-400 opacity-0 group-hover:opacity-100 transition-opacity">&rarr;</span>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </section>
+        <!-- CAMBIO: Sección eliminada -->
         
     </main>
     
-    <!-- ===== FOOTER (IDÉNTICO A INDEX.HTML) ===== -->
     <footer class="bg-gray-900 text-gray-300 pt-16 pb-8">
         <div class="container mx-auto px-4 lg:px-6">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
@@ -734,7 +765,7 @@
                     <div class="flex items-center gap-2 mb-4">
                         <img src="/wikimedia chile logo.png" 
                              alt="Wikimedia Chile Logo" 
-                             class="h-9 w-auto bg-white p-1 rounded-sm"
+                             class="h-9 w-auto"
                              onerror="this.onerror=null;this.src='https://placehold.co/120x36/fff/333?text=WM+Chile';">
                     </div>
                     <p class="text-sm text-gray-400 leading-relaxed">
@@ -767,7 +798,6 @@
                 <div id="footer-subscribe">
                     <h5 class="text-base font-semibold text-white mb-4">Conéctate</h5>
                     <div class="flex gap-4 mb-6">
-                        <!-- CAMBIO: Links de redes sociales actualizados. Twitter eliminado. -->
                         <a href="https://www.instagram.com/wikimedia_cl/" target="_blank" class="text-gray-400 hover:text-white transition-colors" aria-label="Instagram">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
                         </a>
@@ -799,8 +829,6 @@
         </div>
     </footer>
 
-
-    <!-- ===== SCRIPT (IDÉNTICO A INDEX.HTML) ===== -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             
@@ -821,8 +849,7 @@
             const header = document.getElementById('main-header');
             const headerLogo = document.getElementById('header-logo');
 
-            // --- Lógica del Header ---
-            // Forzar el estado 'scrolled' (sólido) en páginas internas
+            // Esta página siempre tiene el header "scrolled"
             if (header) {
                 header.classList.add('header-scrolled');
                 if(headerLogo) {
@@ -830,7 +857,7 @@
                 }
             }
 
-            // --- Lógica del Menú Móvil ---
+            // Lógica para el menú móvil
             if (mobileMenuButton && mobileMenu && closeMobileMenuButton) {
                 mobileMenuButton.addEventListener('click', () => {
                     mobileMenu.classList.remove('hidden');
@@ -841,7 +868,7 @@
                 });
             }
             
-            // --- Lógica del Modal de Búsqueda ---
+            // Lógica para el modal de búsqueda
             if (searchModal && closeSearchButton && openSearchButtons.length > 0) {
                 
                 function openSearch() {
@@ -872,7 +899,24 @@
                 });
             }
 
-            // No se necesita la lógica del carrusel en esta página
+            // Lógica para los botones "Leer más"
+            const readMoreButtons = document.querySelectorAll('.read-more-btn');
+            readMoreButtons.forEach(button => {
+                button.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const content = button.previousElementSibling;
+                    const buttonText = button.querySelector('.button-text');
+                    
+                    if (content && content.classList.contains('collapsible-content')) {
+                        content.classList.toggle('expanded');
+                        const isExpanded = content.classList.contains('expanded');
+                        
+                        if (buttonText) {
+                            buttonText.textContent = isExpanded ? 'Leer menos' : 'Leer más';
+                        }
+                    }
+                });
+            });
 
         });
     </script>

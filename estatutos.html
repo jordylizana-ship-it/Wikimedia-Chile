@@ -1,0 +1,1477 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estatutos - Wikimedia Chile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            background-color: #ffffff;
+        }
+
+        #main-header {
+            transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, color 0.3s ease-in-out;
+            color: #4B5563;
+            background-color: #ffffff;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+
+        #main-header .nav-link {
+            color: #4B5563;
+            text-shadow: none;
+            transition: color 0.3s ease;
+        }
+
+        #main-header .nav-link:hover {
+            color: #5748b5;
+        }
+
+        #main-header .cta-socio {
+            background-color: transparent;
+            border: 2px solid #E5E7EB;
+            color: #5748b5;
+            transition: all 0.3s ease-in-out;
+            font-weight: 600;
+        }
+
+        #main-header .cta-socio:hover {
+            background-color: #F3F4F6;
+        }
+
+        #main-header .cta-donar {
+            background-color: #5748b5;
+            border: 2px solid #5748b5;
+            color: white;
+            transition: all 0.3s ease-in-out;
+            font-weight: 600;
+        }
+
+        #main-header .cta-donar:hover {
+            background-color: #4a3f9a;
+            border-color: #4a3f9a;
+        }
+
+        #main-header.header-scrolled {
+            background-color: #ffffff;
+            color: #4B5563;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+
+        #main-header.header-scrolled .nav-link {
+            color: #4B5563;
+            text-shadow: none;
+        }
+
+        #main-header.header-scrolled .nav-link:hover {
+            color: #5748b5;
+        }
+
+        #main-header.header-scrolled .cta-socio {
+            background-color: transparent;
+            border-color: #E5E7EB;
+            color: #5748b5;
+            font-weight: 600;
+        }
+
+        #main-header.header-scrolled .cta-socio:hover {
+            background-color: #F3F4F6;
+        }
+
+        #main-header.header-scrolled .cta-donar {
+            background-color: #5748b5;
+            color: white;
+            border-color: #5748b5;
+            font-weight: 600;
+        }
+
+        #main-header.header-scrolled .cta-donar:hover {
+            background-color: #4a3f9a;
+            border-color: #4a3f9a;
+        }
+
+        .section-bg-ornament-circles {
+            background-color: #ffffff;
+            background-image: url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23f3f4f6' stroke-width='1'%3E%3Ccircle cx='50' cy='50' r='48' /%3E%3Ccircle cx='50' cy='50' r='38' /%3E%3Ccircle cx='50' cy='50' r='28' /%3E%3C/g%3E%3C/svg%3E");
+            background-size: 250px 250px;
+            background-position: center top;
+        }
+
+        .section-bg-ornament-stars {
+            background-color: #ffffff;
+            background-image: url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23f3f4f6' stroke-width='1'%3E%3Cpath d='M50 0 V20 M50 100 V80 M0 50 H20 M100 50 H80 M35.857 35.857 L42.928 42.928 M64.143 64.143 L57.072 57.072 M35.857 64.143 L42.928 57.072 M64.143 35.857 L57.072 42.928' /%3E%3C/g%3E%3C/svg%3E");
+            background-size: 200px 200px;
+            background-position: center top;
+        }
+
+        .section-bg-ornament-dots {
+            background-color: #ffffff;
+            background-image: url("data:image/svg+xml,%3Csvg width='150' height='150' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23e9e7c4' fill-opacity='0.3'%3E%3Ccircle cx='50' cy='50' r='5' /%3E%3Ccircle cx='35' cy='35' r='5' /%3E%3Ccircle cx='65' cy='35' r='5' /%3E%3Ccircle cx='35' cy='65' r='5' /%3E%3Ccircle cx='65' cy='65' r='5' /%3E%3Ccircle cx='50' cy='20' r='5' /%3E%3Ccircle cx='50' cy='80' r='5' /%3E%3C/g%3E%3C/svg%3E");
+            background-size: 150px 150px;
+            background-position: center 20px;
+        }
+
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Estilos para el contenido de los estatutos */
+        .statutes-content h2 {
+            font-size: 1.5rem;
+            /* 2xl */
+            font-weight: 800;
+            /* extrabold */
+            color: #111827;
+            /* gray-900 */
+            margin-top: 2.5rem;
+            /* mt-10 */
+            margin-bottom: 1.5rem;
+            /* mb-6 */
+            border-bottom: 2px solid #e5e7eb;
+            /* border-b-2 border-gray-200 */
+            padding-bottom: 0.5rem;
+            /* pb-2 */
+            text-transform: uppercase;
+        }
+
+        .statutes-content h3 {
+            font-size: 1.25rem;
+            /* xl */
+            font-weight: 700;
+            /* bold */
+            color: #1f2937;
+            /* gray-800 */
+            margin-top: 2rem;
+            /* mt-8 */
+            margin-bottom: 1rem;
+            /* mb-4 */
+        }
+
+        .statutes-content p {
+            line-height: 1.75;
+            /* leading-relaxed */
+            margin-bottom: 1.25rem;
+            /* mb-5 */
+            color: #374151;
+            /* gray-700 */
+        }
+
+        .statutes-content ol,
+        .statutes-content ul {
+            margin-left: 1.5rem;
+            /* pl-6 */
+            margin-bottom: 1.25rem;
+            /* mb-5 */
+            color: #374151;
+            /* gray-700 */
+        }
+
+        .statutes-content ol {
+            list-style-type: decimal;
+        }
+
+        .statutes-content ul {
+            list-style-type: disc;
+        }
+
+        .statutes-content ol[type="a"] {
+            list-style-type: lower-alpha;
+        }
+
+        .statutes-content ol[type="i"] {
+            list-style-type: lower-roman;
+        }
+
+        .statutes-content li {
+            padding-left: 0.5rem;
+            /* pl-2 */
+            margin-bottom: 0.75rem;
+            /* mb-3 */
+            line-height: 1.75;
+        }
+
+        .statutes-content blockquote {
+            /* Para artículos transitorios */
+            font-style: italic;
+            padding-left: 1rem;
+            /* pl-4 */
+            border-left: 4px solid #d1d5db;
+            /* border-l-4 border-gray-300 */
+            color: #4b5563;
+            /* gray-600 */
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            background-color: #f9fafb;
+            /* bg-gray-50 */
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            padding-right: 1rem;
+            border-radius: 0.5rem;
+            /* rounded-lg */
+        }
+
+        .statutes-content blockquote h3 {
+            font-style: normal;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+
+<body class="bg-white text-gray-800">
+
+    <header id="main-header" class="fixed top-0 left-0 right-0 z-50 header-scrolled">
+        <nav class="container mx-auto px-6 lg:px-8 py-5">
+            <div class="flex justify-between items-center">
+                <div class="flex-1 flex justify-start">
+                    <a href="index.html" class="flex items-center gap-2 cursor-pointer">
+                        <img src="/wikiemdia foundation logo.webp" alt="Wikimedia Chile Logo" id="header-logo"
+                            class="h-9 w-auto"
+                            onerror="this.onerror=null;this.src='https://placehold.co/120x36/fff/333?text=WM+Chile';">
+                    </a>
+                </div>
+
+                <div class="hidden lg:flex flex-1 justify-center items-center gap-8">
+                    <a href="sobre-nosotros.html" class="nav-link font-medium">Sobre Nosotros</a>
+                    <a href="programas.html" class="nav-link font-medium">Programas</a>
+                    <a href="noticias.html" class="nav-link font-medium">Noticias</a>
+                    <a href="agenda.html" class="nav-link font-medium">Agenda</a>
+                    <button id="search-button-desktop" class="nav-link" aria-label="Abrir búsqueda">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="hidden lg:flex flex-1 justify-end items-center gap-3">
+                    <a href="hazte-socio.html" class="cta-socio rounded-lg text-sm px-5 py-2.5">Hazte Socio/a</a>
+                    <a href="donar.html" class="cta-donar rounded-lg text-sm px-5 py-2.5">Donar</a>
+                </div>
+
+                <div class="lg:hidden flex flex-1 justify-end items-center gap-2">
+                    <button id="search-button-mobile" class="nav-link p-2" aria-label="Abrir búsqueda">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                    </button>
+                    <button id="mobile-menu-button" class="nav-link p-2" aria-label="Abrir menú">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Menú Móvil -->
+        <div id="mobile-menu" class="hidden lg:hidden fixed inset-0 bg-white z-50 p-6" style="background-color: white;">
+            <div class="flex justify-between items-center mb-8">
+                <img src="/wikiemdia foundation logo.webp" alt="Wikimedia Chile Logo" class="h-9 w-auto"
+                    onerror="this.onerror=null;this.src='https://placehold.co/120x36/333/fff?text=WM+Chile';">
+                <button id="close-mobile-menu" class="text-gray-700 p-2" aria-label="Cerrar menú">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="flex flex-col gap-5">
+                <a href="index.html" class="block text-xl text-gray-700 hover:text-blue-600 font-medium py-2">Inicio</a>
+                <a href="sobre-nosotros.html"
+                    class="block text-xl text-gray-700 hover:text-blue-600 font-medium py-2">Sobre Nosotros</a>
+                <a href="programas.html"
+                    class="block text-xl text-gray-700 hover:text-blue-600 font-medium py-2">Programas</a>
+                <a href="noticias.html"
+                    class="block text-xl text-gray-700 hover:text-blue-600 font-medium py-2">Noticias</a>
+                <a href="agenda.html"
+                    class="block text-xl text-gray-700 hover:text-blue-600 font-medium py-2">Agenda</a>
+
+                <hr class="my-4">
+
+                <a href="hazte-socio.html"
+                    class="text-white bg-blue-600 hover:bg-blue-700 font-medium rounded-lg text-base px-5 py-3 text-center transition-colors">Hazte
+                    Socio/a</a>
+                <a href="donar.html"
+                    class="text-gray-700 bg-gray-100 hover:bg-gray-200 font-medium rounded-lg text-base px-5 py-3 text-center transition-colors">Donar</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Modal de Búsqueda -->
+    <div id="search-modal"
+        class="hidden fixed inset-0 bg-black/70 z-50 flex items-start justify-center pt-20 md:pt-32 p-4">
+        <div class="bg-white rounded-xl shadow-2xl w-full max-w-2xl relative" id="search-modal-content">
+            <button id="close-search-modal" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600"
+                aria-label="Cerrar búsqueda">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="p-6">
+                <label for="search-input" class="text-lg font-medium text-gray-800 mb-3 block">Buscar en Wikimedia
+                    Chile</label>
+                <div class="flex gap-2">
+                    <input type="text" id="search-input"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        placeholder="Ej: memorias, programas, etc.">
+                    <button
+                        class="text-white bg-blue-600 hover:bg-blue-700 font-medium rounded-lg px-5 py-3 transition-colors"
+                        aria-label="Buscar">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main>
+
+        <!-- Sección de Banner -->
+        <section
+            class="relative pt-20 h-[350px] md:h-[400px] flex items-center justify-center text-white overflow-hidden bg-gray-100">
+            <img src="banner.png" alt="Banner de Wikimedia Chile" class="w-full h-full object-cover object-center">
+            <!-- Se puede añadir un título superpuesto si se desea, pero se mantiene simple por ahora -->
+        </section>
+
+        <!-- Breadcrumbs -->
+        <div class="py-8 md:py-10">
+            <div class="container mx-auto px-4 lg:px-6">
+                <nav class="flex justify-center" aria-label="Breadcrumb">
+                    <ol role="list" class="flex items-center space-x-2">
+                        <li>
+                            <div>
+                                <a href="index.html" class="text-gray-400 hover:text-gray-600 transition-colors">
+                                    <svg class="h-5 w-5 flex-shrink-0" xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                        <path fill-rule="evenodd"
+                                            d="M9.293 2.293a1 1 0 011.414 0l7 7A1 1 0 0117 10.707V17a1 1 0 01-1 1h-3a1 1 0 01-1-1v-3a1 1 0 00-1-1H9a1 1 0 00-1 1v3a1 1 0 01-1 1H4a1 1 0 01-1-1V10.707a1 1 0 01.293-.707l7-7z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                    <span class="sr-only">Inicio</span>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="flex items-center">
+                                <svg class="h-5 w-5 flex-shrink-0 text-gray-300" xmlns="http://www.w3.org/2000/svg"
+                                    fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                                    <path d="M5.555 17.776l8-16 .894.448-8 16-.894-.448z" />
+                                </svg>
+                                <a href="estatutos.html"
+                                    class="ml-2 text-sm font-medium text-gray-600 hover:text-gray-900"
+                                    aria-current="page">Estatutos</a>
+                            </div>
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Sección de Contenido de Estatutos -->
+        <section class="py-12 md:py-16 section-bg-ornament-dots">
+            <div class="container mx-auto px-4 lg:px-6">
+                <div class="max-w-4xl mx-auto bg-white p-8 md:p-12 rounded-2xl shadow-xl border border-gray-100">
+                    <!-- Título -->
+                    <div class="text-center mb-12">
+                        <span class="text-sm font-bold uppercase" style="color: #5748b5;">Documento Legal</span>
+                        <h1 class="text-3xl lg:text-4xl font-extrabold text-gray-900 mt-3">Estatutos de Wikimedia Chile
+                        </h1>
+                    </div>
+
+                    <!-- Contenido de Estatutos -->
+                    <div class="statutes-content">
+                        <h2>TÍTULO PRIMERO<br>DE LA DENOMINACIÓN, DOMICILIO, OBJETO Y PATRIMONIO</h2>
+
+                        <h3>Artículo primero:</h3>
+                        <p>Se constituye una corporación de derecho privado, sin fin de lucro, que se denominará
+                            “WIKIMEDIA CHILE”, y que se regirá por las normas del Título Trigésimo Tercero del Libro
+                            Primero del Código Civil, por el Reglamento sobre Concesión de Personalidad Jurídica a
+                            Corporaciones y Fundaciones o por la disposición reglamentaria que lo reemplace, y por los
+                            presentes Estatutos.</p>
+
+                        <h3>Artículo segundo:</h3>
+                        <p>El domicilio de la Corporación será la Provincia de Santiago, de la Región Metropolitana de
+                            Santiago, sin perjuicio que también podrá desarrollar sus actividades en otros puntos del
+                            país, y podrá establecer oficinas o sedes en cualquier lugar geográfico de la República de
+                            Chile.</p>
+
+                        <h3>Artículo tercero:</h3>
+                        <p>La Corporación tendrá por finalidad u objeto:</p>
+                        <ol type="a">
+                            <li>Contribuir activamente a la difusión, el mejoramiento y el progreso del saber y de la
+                                cultura mediante el desarrollo y distribución de enciclopedias, colecciones de citas,
+                                libros educativos y otras compilaciones de documentos; la difusión de información y de
+                                diversas bases de datos, especialmente en las lenguas que se hablan en el territorio de
+                                la República de Chile, que:
+                                <ol type="1">
+                                    <li>Se encuentren disponibles gracias a las tecnologías de Internet y similares,
+                                        siempre que: exista disponibilidad de los datos fuente (en el caso de que dichas
+                                        obras sean el resultado de compilar o procesar otros contenidos), se utilice un
+                                        formato libre (entendiéndose como tal aquel que puede ser implementado sin
+                                        restricciones por cualquier persona con base en especificaciones técnicas
+                                        documentadas y a disposición pública, sin que la implementación y el uso estén
+                                        limitados por el pago de regalías), y el acceso a la obra no se encuentre
+                                        restringida por medidas técnicas.</li>
+                                    <li>El contenido de dichas obras sea libre, ya sea por condiciones de licenciamiento
+                                        o por las normas que rigen los derechos de autor, entendiendo por “libertad”:
+                                        <ol type="i">
+                                            <li>La libertad de usar dichas obras y disfrutar de los beneficios de su
+                                                uso;</li>
+                                            <li>La libertad de estudiar dichas obras y aplicar el conocimiento adquirido
+                                                de ellas;</li>
+                                            <li>La libertad de hacer y redistribuir copias, totales o parciales, de la
+                                                información o expresión;</li>
+                                            <li>La libertad de hacer cambios y mejoras, y distribuir los trabajos
+                                                derivados.</li>
+                                        </ol>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>Promover y sostener directa o indirectamente los proyectos albergados por Wikimedia
+                                Foundation, Inc., entidad sin fines de lucro registrada en el Estado de Florida, Estados
+                                Unidos de América, y especialmente las aplicaciones, trasposiciones, explotaciones o
+                                traducciones en las lenguas que se hablan en territorio de la República de Chile. Se
+                                consideran proyectos de Wikimedia Foundation Inc. a los que aparecen listados en el
+                                sitio oficial http://www.wikimedia.org o el que lo sustituya en el futuro. A estos
+                                fines, la utilización de las marcas de Wikimedia Foundation Inc., será en cada caso
+                                objeto de un contrato específico entre Wikimedia Foundation Inc. y Wikimedia Chile.</li>
+                        </ol>
+                        <p>Para conseguir estos objetivos, y sin que esta enumeración sea taxativa, la Corporación
+                            podrá:</p>
+                        <ol type="a">
+                            <li>Destinar para sus fines u objetivos los fondos que recibiera, de fuentes nacionales,
+                                internacionales o extranjeras.</li>
+                            <li>Recaudar recursos económicos y destinarlos a dichos propósitos;</li>
+                            <li>Organizar o colaborar en encuentros, congresos, seminarios, simposios, charlas,
+                                talleres, cursos y otros eventos de similar naturaleza;</li>
+                            <li>Editar, imprimir, y distribuir folletos, boletines, revistas, periódicos, libros, y en
+                                general producir y hacer uso de todo tipo de medios audiovisuales y computacionales;
+                            </li>
+                            <li>Adquirir, enajenar, arrendar, gravar, y en general celebrar toda clase de actos
+                                jurídicos destinados a la adquisición, administración y disposición de bienes raíces y
+                                muebles, tanto corporales como incorporales, incluyendo títulos y valores, y realizar
+                                operaciones con cualquier institución bancaria o financiera, pública o privada, nacional
+                                o internacional, necesarios para el cumplimiento de los fines u objetivos de la
+                                Corporación;</li>
+                            <li>Contratar personal, profesional, técnico o administrativo, que fuese necesario para el
+                                cumplimiento de los fines u objetivos;</li>
+                            <li>Mantener relaciones e intercambio cultural con otras entidades nacionales,
+                                internacionales o extranjeras, públicas o privadas, pudiendo asociarse con éstas en
+                                forma transitoria o permanente;</li>
+                            <li>Colaborar con instituciones públicas o privadas, que persigan fines análogos, en
+                                materias que le sean comunes;</li>
+                            <li>Mantener relaciones con las autoridades y gestionar su apoyo para la consecución de los
+                                fines u objetivos de la Corporación.</li>
+                        </ol>
+
+                        <h3>Artículo cuarto:</h3>
+                        <p>La duración de la Corporación será indefinida. La Corporación no persigue ni se propone fines
+                            sindicales o de lucro, ni aquellos de las entidades que deban regirse por un estatuto legal
+                            propio. Estará prohibida para ella toda acción de carácter político partidista.</p>
+
+                        <h3>Artículo quinto:</h3>
+                        <p>El patrimonio de la Corporación estará formado por:</p>
+                        <ol type="a">
+                            <li>Las cuotas de incorporación y las cuotas sociales ordinarias y extraordinarias,
+                                determinadas con arreglo a los Estatutos, que abonen los socios;</li>
+                            <li>Los bienes que adquiera en lo sucesivo por cualquier título, así como las rentas que los
+                                mismos produzcan;</li>
+                            <li>Las donaciones entre vivos o asignaciones por causa de muerte que le hicieren;</li>
+                            <li>La enajenación de sus activos y por las erogaciones y subvenciones que obtenga de
+                                personas naturales o jurídicas, de derecho público o de derecho privado, y demás bienes
+                                que adquiera a cualquier título;</li>
+                            <li>El producto de cualquier otro concepto que la ley permita.</li>
+                        </ol>
+
+                        <h3>Artículo sexto:</h3>
+                        <p>Los fondos sociales se destinarán exclusivamente a la consecución de los fines u objetivos de
+                            la Corporación de la entidad y a los pagos de los gastos de administración. Las rentas,
+                            beneficios o excedentes de la Corporación no podrán por motivo alguno distribuirse entre los
+                            asociados ni aún en caso de disolución.</p>
+
+                        <h2>TÍTULO SEGUNDO<br>DE LOS SOCIOS</h2>
+
+                        <h3>Artículo séptimo:</h3>
+                        <p>Podrá ser socio toda persona sin limitación alguna de sexo, nacionalidad o condición.</p>
+
+                        <h3>Artículo octavo:</h3>
+                        <p>Habrá las siguientes categorías de socios: adherentes, activos, honorarios y cadetes,
+                            entendiéndose por:</p>
+                        <ol type="a">
+                            <li>Socio Adherente: aquella persona natural que adscribe a la corporación y a su misión,
+                                teniendo derecho a participar de las diferentes actividades de ésta y teniendo acceso a
+                                sus redes de comunicación y colaboración. Para ser socio adherente se requiere:
+                                <ol type="1">
+                                    <li>Ser mayor de edad;</li>
+                                    <li>Aceptar el Código de Conducta de Wikimedia Chile.</li>
+                                </ol>
+                                <p>Los Socios Adherentes están exceptuados de pagar cuotas sociales.-</p>
+                            </li>
+                            <li>Socio Activo: aquella persona natural que tiene la plenitud de los derechos y
+                                obligaciones que se establecen en estos Estatutos. Para ser socio activo se requiere:
+                                <ol type="1">
+                                    <li>Cumplir con los requisitos de los socios adherentes;</li>
+                                    <li>Pagar las cuotas de incorporación y estar al día en las cuotas sociales
+                                        ordinarias y extraordinarias;</li>
+                                    <li>Encontrarse registrado con nombre de usuario en al menos un proyecto de
+                                        Wikimedia Foundation Inc.;</li>
+                                    <li>Haber asistido a al menos dos asambleas ordinarias o sesiones públicas de
+                                        Directorio en los últimos veinticuatro meses. Los socios que no cumplan con este
+                                        requisito pasarán a ser considerados como socios adherentes, a menos que
+                                        soliciten su renuncia a la corporación.</li>
+                                </ol>
+                            </li>
+                            <li>Socio Honorario: aquella persona natural o jurídica que, por su trayectoria en defensa y
+                                promoción de la cultura y el conocimiento libre, haya obtenido esta distinción, a
+                                propuesta de al menos dos socios activos, en virtud de acuerdo de la Asamblea General de
+                                Socios. Este socio no tendrá obligación alguna para con la Corporación y sólo tendrá
+                                derecho a voz en las Asambleas Generales, a ser informado periódicamente de la marcha de
+                                la Institución, y a asistir a los actos públicos de ella.
+                                <p>La persona jurídica que tenga la calidad de socio honorario hará uso de sus derechos
+                                    por intermedio de su representante legal o de un apoderado especialmente designado
+                                    para estos efectos.</p>
+                                <p>El socio honorario que desee tener los mismos derechos que un socio activo deberá
+                                    solicitar su admisión en esa categoría, a cuyo efecto se aplicarán los requisitos
+                                    que el presente Estatuto exige para el ingreso a la misma, exceptuando el de
+                                    colaboración activa en al menos un proyecto de Wikimedia Foundation, Inc.</p>
+                                <p>Los Socios Honorarios están exceptuados de pagar cuotas sociales.-</p>
+                            </li>
+                            <li>Socio Cadete: aquella persona natural que no ha llegado a la mayoría de edad al momento
+                                de solicitar su ingreso como socio, pasando automáticamente a la categoría de activo o
+                                socio adherente, según correspondiera, al momento de alcanzar la mayoría de edad.
+                                <p>Los Socios Cadete están exceptuados de pagar cuotas sociales.-</p>
+                            </li>
+                        </ol>
+                        <p>Todo socio que, sin importar su categoría, se encuentre presente en el acto constitutivo,
+                            será considerado socio fundador, sin que esta denominación le otorgue privilegio alguno.</p>
+
+                        <h3>Artículo noveno:</h3>
+                        <p>Para ser admitido como socio adherente, el aspirante deberá presentar una solicitud de
+                            ingreso, por los medios que fije el Directorio, consignando los siguientes datos:</p>
+                        <ol type="a">
+                            <li>Nombre completo;</li>
+                            <li>Fecha de nacimiento;</li>
+                            <li>Dirección de correo electrónico;</li>
+                            <li>Domicilio;</li>
+                            <li>Cédula de Identidad o documento de identidad;</li>
+                            <li>Teléfono;</li>
+                            <li>Declaración jurada simple de aceptación del Código de Conducta de Wikimedia Chile y de
+                                los Estatutos de Wikimedia Chile; y</li>
+                            <li>Declaración jurada simple autorizando a la Corporación para contactar al aspirante
+                                mediante el uso de los medios informados.</li>
+                        </ol>
+                        <p>El Directorio, deberá pronunciarse sobre las postulaciones a socio adherente por medio de un
+                            correo electrónico, en un máximo de cinco días corridos. En caso de que pasen más de cinco
+                            días corridos, sin que el directorio se pronuncie al respecto, se entenderá que el
+                            Directorio se pronuncia favorablemente a la postulación y se podrá contactar al postulante
+                            para ratificar su ingreso como socio adherente. El directorio podrá delegar esta función en
+                            la Gerencia o Administración de la Corporación.</p>
+
+                        <h3>Artículo décimo:</h3>
+                        <p>Para ser admitido como socio activo, el aspirante deberá presentar una solicitud de ingreso,
+                            por los medios que fije el Directorio, consignando los datos exigidos en el artículo
+                            anterior, además:</p>
+                        <ol type="a">
+                            <li>Nombre de usuario en algún proyecto de Wikimedia Foundation Inc.;</li>
+                            <li>Declaración jurada de mantener irreprochable conducta pública.</li>
+                        </ol>
+                        <p>La solicitud efectuada por todo aspirante a socio activo será informada por correo
+                            electrónico a todos los socios activos y honorarios, quienes dentro de un plazo no menor a
+                            diez días, podrán impugnar su solicitud, si aquél no reuniese los requisitos expresados en
+                            el presente Estatuto.</p>
+                        <p>Luego, el Directorio deberá pronunciarse sobre las postulaciones a socio activo, en la
+                            primera sesión que celebre después de presentadas éstas, considerando los plazos dispuestos
+                            por el párrafo anterior, en base a su mérito y considerando la o las impugnaciones que se
+                            hubiesen formulado, en su caso. No podrá transcurrir más de sesenta días desde la fecha de
+                            la presentación, sin que el Directorio conozca de ellas y resuelva; en caso contrario, se
+                            entenderá que el Directorio se pronuncia favorablemente a la solicitud de ingreso.</p>
+                        <p>La Gerencia o Administración de la Corporación, en representación del Directorio podrá
+                            solicitar a los aspirantes, dentro del plazo de quince días contados desde la fecha de la
+                            presentación de la respectiva solicitud de ingreso, otros datos no establecidos en este
+                            artículo, fijando un plazo para la entrega de los mismos.</p>
+                        <p>Las solicitudes de ingreso presentadas con veinte días de anticipación a la fecha de
+                            celebración de una Asamblea General en que deban realizarse elecciones, deberán ser
+                            conocidas por el Directorio antes de dicha Asamblea.</p>
+                        <p>En el caso de ser rechazado, el aspirante podrá reiterar su solicitud de ingreso en la
+                            próxima reunión de Asamblea General Ordinaria, pudiendo esta solicitud ser aprobada por
+                            mayoría simple.</p>
+
+                        <h3>Artículo undécimo:</h3>
+                        <p>La calidad de socio adherente, activo y cadete se adquiere por la aceptación del Directorio,
+                            por los dos tercios (2/3) de sus miembros, de la solicitud de ingreso, en la cual se
+                            manifieste plena conformidad con la misión de la Corporación.</p>
+                        <p>Los socios activos se comprometen a cumplir fielmente los Estatutos, los Reglamentos y los
+                            acuerdos del Directorio y de la Asamblea General de Socios.</p>
+                        <p>La calidad de socio honorario se adquiere del siguiente modo:</p>
+                        <ol type="a">
+                            <li>Dos o más socios podrán proponer un posible socio honorario a la Asamblea General de
+                                Socios;</li>
+                            <li>Aprobada la propuesta por mayoría simple de los socios presentes en la respectiva
+                                Asamblea General de Socios, esta solicitará al Directorio para que invite al posible
+                                socio honorario a unirse a la Corporación en dicha calidad;</li>
+                            <li>El posible socio invitado deberá responder formalmente al Directorio aceptando la
+                                invitación extendida, dentro de un plazo no mayor a sesenta días.</li>
+                        </ol>
+
+                        <h3>Artículo décimo segundo:</h3>
+                        <p>Los socios activos tienen derecho a voz y voto en la asamblea, y están capacitados para
+                            ocupar cargos designados y electivos en la Corporación.</p>
+                        <p>Los socios adherentes y cadetes tienen derecho a voz pero no tienen derecho a voto, ni pueden
+                            ocupar cargos electivos.-</p>
+                        <p>Los socios honorarios tienen derecho a ocupar cargos electivos en la Corporación, donde
+                            tienen derecho a voz y a voto. Sin embargo, los socios honorarios no tienen derecho a voto
+                            en la Asamblea General de Socios</p>
+
+                        <h3>Artículo décimo tercero:</h3>
+                        <p>Los socios activos tienen las siguientes obligaciones:</p>
+                        <ol type="a">
+                            <li>Llenar la ficha de afiliación, sin falsear los datos que allí se consignan, y dar cuenta
+                                de cualquier cambio en los mismos;</li>
+                            <li>Asistir a las Asambleas Generales y Extraordinarias a que fueren legalmente convocados;
+                            </li>
+                            <li>Servir con eficiencia y dedicación los cargos para los cuales sean designados y las
+                                labores o comisiones que se le encomienden;</li>
+                            <li>Cumplir fiel y oportunamente las obligaciones pecuniarias para con la Corporación;</li>
+                            <li>Informar por escrito al Directorio cualquier condición que se produjera y que le
+                                inhabilite para continuar siendo socio;</li>
+                            <li>Respetar y cumplir las disposiciones de estos Estatutos y los acuerdos del Directorio y
+                                de la Asamblea General de Socios;</li>
+                            <li>Respetar el Código de Conducta de la Corporación.</li>
+                        </ol>
+                        <p>A los socios adherentes, honorarios y cadetes le son aplicables las obligaciones contenidas
+                            en las letras a), c), e), f) y g) precedentes.-</p>
+
+                        <h3>Artículo décimo cuarto:</h3>
+                        <p>Los socios activos tienen los siguientes derechos:</p>
+                        <ol type="a">
+                            <li>Asistir a las reuniones públicas de Directorio;</li>
+                            <li>Presentar por escrito al Directorio ideas, proposiciones y proyectos de utilidad que
+                                encuadren dentro de los fines de la Corporación;</li>
+                            <li>Solicitar al Directorio información acerca de las cuentas de la Corporación, así como de
+                                sus actividades y programas;</li>
+                            <li>Asistir a las Asambleas Generales, deliberar y votar en las mismas, y a elegir y ser
+                                elegido para servir cargos directivos, con las limitaciones fijadas por este Estatuto;
+                            </li>
+                            <li>Tener libre acceso a las dependencias de la Corporación, si las hubiere, en las
+                                condiciones que fije el Directorio; y uso y goce de los beneficios que se establecen en
+                                estos Estatutos.-</li>
+                            <li>Cumplir obligaciones de representación del directorio y/o la corporación en actividades
+                                del movimiento Wikimedia en Chile o el extranjero.</li>
+                        </ol>
+                        <p>Los socios adherentes, honorarios y cadetes tienen los derechos contemplados en las letras a)
+                            y b), y el de asistir a las Asambleas Generales y Extraordinarias, con derecho a voz, y de
+                            asumir labores o comisiones que la Corporación le encomiende, así como todos los derechos
+                            que la Ley les otorga.</p>
+
+                        <h3>Artículo décimo quinto:</h3>
+                        <p>La calidad de socio activo se pierde:</p>
+                        <ol type="a">
+                            <li>Por fallecimiento o por disolución en caso de que el socio sea persona jurídica;</li>
+                            <li>Por renuncia escrita presentada al Directorio;</li>
+                            <li>Por expulsión decretada en conformidad al artículo décimo sexto de estos Estatutos;</li>
+                            <li>Por no asistir a al menos dos asambleas ordinarias o sesiones públicas de Directorio en
+                                un plazo de 24 meses.</li>
+                        </ol>
+                        <p>Tratándose de socios adherentes y cadetes, la calidad de tal se pierde por las razones
+                            contempladas en las letras a), b) y c). En el caso de un socio honorario, se pierde la
+                            calidad de tal por acuerdo de Asamblea General, por motivos graves y fundados.</p>
+                        <p>El socio que por cualquier causa dejare de pertenecer a la Corporación, deberá cumplir con
+                            las obligaciones pecuniarias que hubiere contraído con ella.</p>
+
+                        <h3>Artículo décimo sexto:</h3>
+                        <p>El Tribunal de Honor, a que se refiere el título octavo de estos Estatutos, podrá sancionar a
+                            los socios, por las faltas y transgresiones que cometan, sólo con algunas de las siguientes
+                            medidas disciplinarias:</p>
+                        <ol type="a">
+                            <li>Suspensión hasta por seis meses de todos los derechos en la Corporación:
+                                <ol type="1">
+                                    <li>Por incumplimiento de las obligaciones prescritas en el artículo décimo tercero
+                                        de estos Estatutos;</li>
+                                    <li>Al socio que atrasare en más de noventa días el cumplimiento de sus obligaciones
+                                        pecuniarias para con la Corporación, o que adeude un monto equivalente a tres
+                                        cuotas sociales ordinarias mensuales. Esta situación será denunciada por el
+                                        Directorio al Tribunal de Honor y la suspensión tendrá efecto desde el mismo
+                                        momento de efectuada la denuncia. Esta suspensión cesará de inmediato al
+                                        cumplirse la obligación morosa;</li>
+                                    <li>Por no respetar el Código de Conducta de la corporación.</li>
+                                </ol>
+                            </li>
+                            <li>Expulsión basada en una de las siguientes causales:
+                                <ol type="1">
+                                    <li>Por incumplimiento de las obligaciones pecuniarias para con la Corporación,
+                                        durante seis meses consecutivos, previa intimación efectuada por correo
+                                        electrónico, en la que se le invite a efectuar el pago dentro de los cinco días
+                                        corridos, contados desde la notificación. Podrá reincorporarse por una sola vez
+                                        abonando el importe de su deuda, más los gastos que demandare la gestión;</li>
+                                    <li>Por causar grave daño de palabra, por escrito o con obras u omisión a los
+                                        intereses, imagen o patrimonio de la Corporación, a sus socios, o a los
+                                        trabajadores y colaboradores de la corporación. El daño debe encontrarse
+                                        suficientemente acreditado a ojos del Tribunal de Honor.</li>
+                                    <li>Por haber sufrido tres suspensiones en sus derechos, de conformidad a lo
+                                        establecido en la letra b) de este artículo, dentro del plazo de dos años
+                                        contados desde la primera suspensión.</li>
+                                    <li>Haber perdido los requisitos para ser socio, de conformidad a los presentes
+                                        Estatutos;</li>
+                                </ol>
+                            </li>
+                        </ol>
+                        <p>El socio a quien se le impusiera alguna de las medidas antes referidas, será notificado por
+                            correo electrónico y podrá presentar solicitud de reconsideración de la resolución dictada,
+                            dentro del plazo de 15 días de notificado, salvo cuando fuere por la situación contemplada
+                            en la letra b) número 2 de este artículo.</p>
+                        <p>En caso que el afectado presente solicitud de reconsideración, el Tribunal de Honor analizará
+                            su mérito y podrá reconsiderar su decisión. De no presentarse descargos dentro de plazo, la
+                            medida disciplinaria quedará a firme.</p>
+                        <p>El afectado por la medida de suspensión o expulsión de la Corporación, podrá apelar de la
+                            resolución dictada ante Tribunal de Honor. En su escrito de apelación deberá formular
+                            descargos en contra de la resolución dictada, pronunciándose sobre las causales que
+                            fundamentan el fallo dictado. El plazo para presentar la apelación será de quince días
+                            corridos, contados desde la respectiva notificación. De la apelación conocerá la Asamblea
+                            General, en única instancia. La apelación será conocida en la primera Asamblea General
+                            Ordinaria que se realice, contado este plazo desde la fecha de presentación del escrito de
+                            apelación. Mientras la Asamblea no se pronuncie, quedarán suspendidos sus derechos de socio.
+                        </p>
+                        <p>Para todos los efectos establecidos en estos Estatutos, las intimaciones o notificaciones
+                            efectuadas mediante correo electrónico, se entenderán practicadas desde el tercer día hábil
+                            siguiente a aquél en que fuera expedido. Los plazos fijados en los Estatutos son de días
+                            corridos, cuando no se señale lo contrario.</p>
+
+                        <h3>Artículo décimo séptimo:</h3>
+                        <p>Las renuncias para que sean válidas deben constar por escrito, y la firma debe ser ratificada
+                            ante el Secretario del Directorio, o encontrarse autorizada ante Notario Público. Cumplidos
+                            estos requisitos formales tendrá la renuncia plena vigencia, no siendo necesaria su
+                            aprobación por el Directorio o por la Asamblea.-</p>
+
+                        <h2>TÍTULO TERCERO<br>DE LAS CUOTAS SOCIALES</h2>
+
+                        <h3>Artículo décimo octavo:</h3>
+                        <p>La cuota ordinaria será determinada por la Asamblea General Ordinaria a propuesta del
+                            Directorio, y anualmente no podrá ser inferior a la décima parte de una unidad de fomento ni
+                            superior a dos unidades de fomento.</p>
+                        <p>Asimismo, la cuota de incorporación será determinada por la Asamblea General Ordinaria del
+                            año respectivo, a propuesta del Directorio, y no podrá ser inferior a la centésima parte de
+                            una unidad de fomento ni superior a media unidad de fomento.</p>
+                        <p>El Directorio estará autorizado para establecer que el pago y recaudación de la cuota
+                            ordinaria se haga mensual, trimestral, semestralmente o anualmente. Si, por circunstancias
+                            particulares, un socio se encontrara en dificultades para afrontar dicho pago, podrá
+                            solicitar al Directorio eximirse de esta obligación, durante un plazo máximo de seis meses,
+                            pudiendo volver a solicitarlo si sus dificultades continúan, y comprometiéndose a comunicar
+                            de inmediato si dichas circunstancias se modifiquen.</p>
+                        <p>El Directorio deberá resolver la petición en la primera sesión que celebre luego de haberse
+                            presentado ésta.</p>
+
+                        <h3>Artículo décimo noveno:</h3>
+                        <p>Las cuotas extraordinarias serán determinadas por una Asamblea General Extraordinaria, a
+                            propuesta del Directorio, no pudiendo ser su valor inferior a la décima parte de una unidad
+                            de fomento ni superior a tres unidades de fomento. Se procederá a fijar y exigir una cuota
+                            de esta naturaleza cada vez que lo requieran las necesidades de la Corporación. No podrá
+                            fijarse más de una cuota extraordinaria en cada trimestre.</p>
+                        <p>Los fondos recaudados por concepto de cuotas extraordinarias no podrán ser destinados a otro
+                            fin que al objeto para el cual fueron recaudados, a menos que una Asamblea General
+                            especialmente convocada al efecto, resuelva darle otro destino.</p>
+
+                        <h2>TÍTULO CUARTO<br>DE LA ASAMBLEA GENERAL</h2>
+
+                        <h3>Artículo vigésimo:</h3>
+                        <p>La Asamblea General es el órgano colectivo principal de la Corporación e integra al conjunto
+                            de sus socios. Sus acuerdos obligan a los socios presentes y ausentes, siempre que hubieren
+                            sido tomados en la forma establecida por estos Estatutos y no fueren contrarios a la Ley.
+                        </p>
+                        <p>Habrá Asambleas Generales Ordinarias y Extraordinarias. Los socios podrán asistir
+                            presencialmente, en el local ubicado en el domicilio de la Corporación, o aquel que el
+                            Directorio designe al efecto, o por medios remotos. El Directorio, en la citación a la
+                            respectiva asamblea, informará el lugar presencial de realización y los canales remotos
+                            habilitados para tal efecto.</p>
+                        <p>La Asamblea General Ordinaria, se celebra en el mes de abril de cada año. En ella el
+                            Directorio rendirá cuenta de la inversión de los fondos y de la marcha de la Corporación
+                            durante el año anterior, y someterá a aprobación la memoria explicativa de las actividades y
+                            el balance del ejercicio anterior; también se procederá a las elecciones determinadas por
+                            estos Estatutos, cuando corresponda.</p>
+                        <p>El Directorio, con acuerdo de la Asamblea, podrá establecer que el acto eleccionario se
+                            celebre en otro día, hora y lugar y/o canal remoto, que no podrá exceder en noventa días a
+                            la fecha original cuando la conveniencia institucional así lo indique. En dicho caso, se
+                            cumplirá con lo dispuesto en el artículo vigésimo segundo de estos Estatutos.-</p>
+                        <p>En la Asamblea General Ordinaria se fijará la cuota ordinaria y de incorporación, conforme a
+                            lo establecido en estos Estatutos. En la Asamblea General Ordinaria podrá tratarse cualquier
+                            asunto relacionado con los intereses sociales, a excepción de los que correspondan
+                            exclusivamente a las Asambleas Generales Extraordinarias.</p>
+                        <p>Si por cualquier causa no se celebrare una Asamblea General Ordinaria en el tiempo
+                            estipulado, el Directorio deberá convocar a una nueva Asamblea dentro del plazo de treinta
+                            días y la Asamblea que se celebre tendrá, en todo caso, el carácter de Asamblea Ordinaria.
+                        </p>
+                        <p>La memoria explicativa de las actividades de la Corporación y el balance del ejercicio
+                            anterior, que se someterán a aprobación de la Asamblea General Ordinaria, deberán ser
+                            puestos a disposición de los socios con a los menos quince días de anticipación a la
+                            celebración de la Asamblea, por los medios que el Directorio estime convenientes.</p>
+                        <p>En caso que el patrimonio de la Corporación o los ingresos totales anuales superen los
+                            límites establecidos por la ley o la norma administrativa que corresponda, la contabilidad,
+                            balance general y estados financieros se someterán al examen de auditores externos
+                            independientes designados por la Asamblea General Ordinaria, de entre los inscritos en el
+                            Registro de Auditores de la Superintendencia de Valores y Seguros. En todo caso, por
+                            petición escrita de una cuarta parte de los socios activos, la contabilidad, balance general
+                            y estados financieros deberá someterse al examen antes referido.</p>
+
+                        <h3>Artículo vigésimo primero:</h3>
+                        <p>Las Asambleas Generales Extraordinarias se celebrarán cada vez que el Directorio las
+                            convoque, o cada vez que lo soliciten al Presidente del Directorio, por escrito, a lo menos
+                            una vigésima parte de los socios activos, cuando la cantidad de socios activos sea inferior
+                            a veinte, y de una décima parte de los socios activos cuando la cantidad de socios activos
+                            sea superior a veinte.</p>
+                        <p>En las Asambleas Generales Extraordinarias únicamente podrán tratarse las materias indicadas
+                            en la convocatoria; cualquier acuerdo que se adopte sobre otras materias será nulo y de
+                            ningún valor. Corresponde exclusivamente a la Asamblea General Extraordinaria tratar de las
+                            siguientes materias:</p>
+                        <ol type="a">
+                            <li>De la reforma de los Estatutos de la Corporación;</li>
+                            <li>De la disolución de la Corporación;</li>
+                            <li>De las reclamaciones en contra de los miembros del Directorio y del Tribunal de Honor,
+                                para hacer efectiva la responsabilidad que les corresponda, por transgresión grave a la
+                                Ley o a los Estatutos, mediante su destitución, si los cargos fueran comprobados; sin
+                                perjuicio de las acciones civiles y criminales que la Corporación tenga derecho a
+                                entablar en su contra;</li>
+                            <li>De la constitución de una Unión o Federación de Asociaciones, o la incorporación a una
+                                ya existente;</li>
+                            <li>De la compra, venta, hipoteca, permuta, cesión y transferencia de bienes raíces, de la
+                                constitución de servidumbres y prohibiciones de gravar y enajenar y del arrendamiento de
+                                inmuebles por un plazo superior a tres años.</li>
+                        </ol>
+                        <p>Los acuerdos a que se refieren las letras a), b), d) y e) deberán reducirse a escritura
+                            pública que suscribirá, en representación de la Corporación, el Presidente conjuntamente con
+                            las personas que la Asamblea General Extraordinaria designe.</p>
+
+                        <h3>Artículo vigésimo segundo:</h3>
+                        <p>Las citaciones a las Asambleas Generales de Socios, ya sean Ordinarias o Extraordinarias, se
+                            harán por medio de correos electrónicos, despachados a la casilla que cada socio designe
+                            para tal efecto; los correos electrónicos deberán ser enviados por una vez, con cinco días
+                            de anticipación a los menos y con no más de veinte, al día fijado para la realización de la
+                            respectiva Asamblea.</p>
+                        <p>En dicho correo electrónico se indicará el día, lugar y medios remotos, hora y objeto de la
+                            reunión. No podrá citarse en el mismo aviso para una segunda reunión, cuando por falta de
+                            quórum no se lleve a efecto la primera.-</p>
+
+                        <h3>Artículo vigésimo tercero:</h3>
+                        <p>Las Asambleas Generales Ordinarias y Extraordinarias serán legalmente instaladas y
+                            constituidas, en primera convocatoria, si a ellas concurriere, a lo menos, la mayoría
+                            absoluta de los socios con derecho a voto. Si no se reuniere este quórum se dejará
+                            constancia de este hecho en el acta y deberá disponerse una segunda citación para día
+                            diferente, dentro de los treinta días siguientes al de la primera citación, en cuyo caso la
+                            Asamblea se realizará con los que asistan.</p>
+                        <p>No podrán tomar parte de las Asambleas los socios que, a la fecha de la realización,
+                            estuvieren atrasados en más de noventa días en el cumplimiento de sus obligaciones
+                            pecuniarias para con la Corporación, o que adeuden un monto equivalente a tres cuotas
+                            sociales ordinarias mensuales. Los excluidos por morosidad podrán regularizar su situación
+                            con la Tesorería hasta el momento de iniciarse las deliberaciones.</p>
+
+                        <h3>Artículo vigésimo cuarto:</h3>
+                        <p>Los acuerdos en las Asambleas Generales se adoptarán por la mayoría absoluta de los socios
+                            activos asistentes, salvo en los casos en que la Ley o los Estatutos hayan fijado una
+                            mayoría especial.</p>
+                        <p>Los socios activos tendrán derecho a un voto, pudiendo delegarlo en otro socio activo
+                            mediante una carta poder simple. Cada socio activo, además de hacer uso a su derecho a voto,
+                            sólo podrá representar a tres socios activos. Los poderes serán calificados por el
+                            Secretario del Directorio o quien lo subrogue.</p>
+
+                        <h3>Artículo vigésimo quinto:</h3>
+                        <p>De las deliberaciones y acuerdos adoptados en las Asambleas Generales se dejará constancia en
+                            un libro o registro que asegure la fidelidad de las Actas, que será llevado por el
+                            Secretario. Estas actas serán un extracto de lo ocurrido en la reunión y serán firmadas por
+                            el Presidente, por el Secretario o por quienes hagan sus veces, y además por dos socios
+                            activos asistentes designados en la misma Asamblea para este efecto. El Secretario podrá
+                            firmar el acta en representación de los socios que participen por medios remotos, siempre
+                            que, durante la Asamblea efectuada, los socios así lo hayan acordado y autorizado. Las Actas
+                            podrán ser firmadas con Firma Electrónica Avanzada, lo que será certificado por el
+                            Secretario.</p>
+                        <p>En dichas Actas podrán los socios asistentes a la Asamblea estampar las reclamaciones
+                            convenientes a sus derechos, por vicios de procedimiento relativos a la citación,
+                            constitución y funcionamiento de la misma.</p>
+
+                        <h3>Artículo vigésimo sexto:</h3>
+                        <p>Las Asambleas Generales serán presididas por el Presidente de la Corporación y actuará como
+                            Secretario el que lo sea del Directorio, o las personas que hagan sus veces. En caso de
+                            faltar estas últimas, presidirá la Asamblea un Director u otra persona que la propia
+                            Asamblea designe para ese efecto.</p>
+
+                        <h2>TÍTULO QUINTO<br>DEL DIRECTORIO</h2>
+
+                        <h3>Artículo vigésimo séptimo:</h3>
+                        <p>La Corporación será dirigida y administrada por un Directorio compuesto de un mínimo de tres
+                            y un máximo de cinco directores.</p>
+                        <p>El número de directores elegidos dependerá de la cantidad de socios que participen del acto
+                            electoral. Cuando participen treinta o menos socios, se elegirán tres directores. Cuando
+                            participen más de treinta socios se eligirán cinco Directores. Habrá a lo menos un
+                            Presidente, un Secretario y un Tesorero. Los Directores podrán ser socios activos u
+                            honorarios propuestos por la asamblea.</p>
+                        <p>El Presidente, Secretario y Tesorero serán socios activos de la Corporación. El Directorio
+                            durará dos años en sus funciones pudiendo sus miembros ser reelegidos para los períodos
+                            siguientes. Los miembros del Directorio desempeñarán sus funciones en forma totalmente
+                            gratuita, pero tendrán derecho a ser reembolsados por los gastos, autorizados por el
+                            Directorio, y que justifiquen haber efectuado en el ejercicio de sus funciones.</p>
+                        <p>El Presidente del Directorio lo será también de la Corporación. El Presidente del Directorio
+                            dirimirá los empates que puedan producirse en las sesiones de Directorio. En ausencia
+                            temporal del Presidente, le subrogará el Tesorero.</p>
+
+                        <h3>Artículo vigésimo octavo:</h3>
+                        <p>El Directorio y el Tribunal de Honor se elegirán en Asamblea General Ordinaria de socios de
+                            acuerdo a las siguientes normas:</p>
+                        <ol type="a">
+                            <li>Las elecciones se realizarán cada dos años;</li>
+                            <li>Cada socio activo sufragará en forma libre en un solo acto, teniendo derecho a marcar
+                                tantas preferencias como candidatos haya por elegir, no pudiendo acumular preferencias
+                                en un candidato, ni repetir un nombre;</li>
+                            <li>Se proclamarán elegidos los candidatos que en la elección resulten con el mayor número
+                                de votos hasta completar los miembros del Directorio y del Tribunal de Honor, que
+                                corresponda elegir;</li>
+                            <li>Es incompatible el cargo de Director con el de miembro del Tribunal de Honor;</li>
+                            <li>No completándose el número necesario de miembros del Directorio o de miembros del
+                                Tribunal de Honor, o existiendo empate entre dos o más candidatos que ocupen el último
+                                lugar entre las más altas mayorías respectivas, se procederá a efectuar tantas
+                                elecciones como sea necesario;</li>
+                            <li>Habrá una Comisión de Elecciones la que deberá estar integrada siempre por dos socios
+                                activos y dos miembros del Tribunal de Honor que no sean candidatos, debiendo elegir
+                                entre ellos un Presidente de Comisión quien dirimirá los empates que puedan producirse,
+                                con motivo de adoptar ésta un acuerdo o resolución. Dicha Comisión se constituirá en la
+                                Asamblea General en que corresponda celebrar las elecciones, y se integrará por los
+                                miembros del Tribunal de Honor que designe el Directorio, o en su defecto, por los
+                                socios activos que éste mismo designe, y por los integrantes de la Asamblea que ésta
+                                elija en el mismo acto;</li>
+                            <li>El recuento de votos será público.</li>
+                        </ol>
+
+                        <h3>Artículo vigésimo noveno:</h3>
+                        <p>El Directorio elegido deberá asumir de inmediato sus funciones, sin perjuicio de las
+                            rendiciones de cuentas y la entrega de documentos que deba realizarse con posterioridad,
+                            para lo cual, deberá en ese acto fijarse una fecha.</p>
+                        <p>En la Asamblea General en que se elija el Directorio, o dentro de los quince días siguientes
+                            a ella, el Directorio deberá elegir, de entre sus miembros, un Presidente, un Secretario y
+                            un Tesorero.</p>
+                        <p>Si por cualquier causa no se realizarán las elecciones de Directorio en la oportunidad que
+                            establece el artículo décimo octavo de estos Estatutos, el Directorio continuará en
+                            funciones, con todas sus obligaciones y atribuciones, hasta que sea reemplazado en la forma
+                            prescrita por los Estatutos.</p>
+
+                        <h3>Artículo trigésimo:</h3>
+                        <p>En caso de fallecimiento, inhabilidad, renuncia, destitución, ausencia o imposibilidad
+                            absoluta de un Director para el desempeño de su cargo, el Directorio nombrará un
+                            reemplazante que durará en sus funciones el tiempo que reste para completar el período del
+                            Director reemplazado. Se entiende por ausencia o imposibilidad absoluta de un Director para
+                            el desempeño de su cargo, la inasistencia a tres o más sesiones consecutivas, sin causa
+                            justificada, la que será calificada por el propio Directorio, con exclusión del involucrado.
+                        </p>
+                        <p>Cuando, por cualquier causa, el número de miembros del Directorio quede reducido a menos de
+                            la mayoría absoluta, deberá convocarse a elecciones por la Asamblea General de Socios, en el
+                            plazo de siete días.</p>
+
+                        <h3>Artículo trigésimo primero:</h3>
+                        <p>Podrá ser elegido miembro del Directorio, cualquier socio activo u honorario, con seis meses
+                            o más de antigüedad en la Corporación. Para estos efectos, se imputarán por uno cada dos
+                            días de antigüedad como socio adherente o cadete.</p>
+                        <p>No podrán ser Directores las personas que estén suspendidas de su calidad de socios o que
+                            estén siendo investigadas por alguna falta a las obligaciones establecidas en el artículo
+                            décimo tercero de estos estatutos.</p>
+
+                        <h3>Artículo trigésimo segundo:</h3>
+                        <p>El Directorio deberá sesionar con la mayoría absoluta de sus miembros y sus acuerdos se
+                            adoptarán por la mayoría absoluta de los Directores asistentes, salvo en los casos que estos
+                            Estatutos señalen un quórum distinto. En caso de empate decidirá el voto del que preside. De
+                            las deliberaciones y acuerdos del Directorio se dejará constancia en un libro o registro de
+                            actas, que serán firmadas por todos los Directores que hubieren concurrido a la sesión.</p>
+                        <p>El Director que quisiera salvar su responsabilidad por algún acto o acuerdo del Directorio,
+                            deberá hacer constar su oposición en el acta respectiva, debiendo darse cuenta de ello en la
+                            siguiente Asamblea General de socios. Las sesiones de directorio podrán llevarse a cabo por
+                            medios remotos. En estos casos el Secretario podrá ser autorizado para firmar las actas en
+                            representación de otros directores. Las actas podrán ser suscritas con firma electrónica
+                            avanzada, lo que será certificado por el Secretario.</p>
+                        <p>El Directorio sesionará ordinariamente, por lo menos, una vez en cada trimestre calendario,
+                            en la fecha que acuerden sus integrantes. Una vez al año, a lo menos, el Directorio deberá
+                            celebrar una sesión pública, que comunicará por los medios que estime convenientes.</p>
+                        <p>El Directorio podrá sesionar extraordinariamente cuando lo juzgue necesario su Presidente o
+                            lo soliciten dos o más de los miembros del Directorio, debiendo en este caso ser convocado
+                            por el Secretario. En estas sesiones sólo podrán tratarse las materias objeto de la
+                            citación, rigiendo las mismas formalidades de constitución y funcionamiento establecidas en
+                            este artículo para las sesiones ordinarias.</p>
+
+                        <h3>Artículo trigésimo tercero:</h3>
+                        <p>El Directorio podrá suspender a cualquiera de sus miembros por faltas cometidas en el
+                            desempeño de sus funciones como director y como socio activo. Se requerirá el voto de los
+                            dos tercios de sus componentes y los antecedentes serán pasados a la próxima Asamblea para
+                            que ratifique dicha resolución.</p>
+
+                        <h3>Artículo trigésimo cuarto:</h3>
+                        <p>Serán deberes y atribuciones del Directorio:</p>
+                        <ol type="a">
+                            <li>Dirigir la Corporación, cumplir estos Estatutos, los reglamentos, las resoluciones de la
+                                Asamblea General y las suyas propias, y velar porque éstos se cumplan, al igual que las
+                                finalidades perseguidas por ella;</li>
+                            <li>Administrar los bienes sociales e invertir sus recursos. Aprobar los proyectos y
+                                programas que se encuentren ajustados a los objetivos de la Corporación;</li>
+                            <li>Llevar los libros de administración y de contabilidad requeridos por la ley y los que la
+                                Corporación estime convenientes y necesarios para su desenvolvimiento;</li>
+                            <li>Citar a Asamblea General de socios, tanto ordinaria como extraordinaria, en la forma y
+                                épocas que señalan estos Estatutos;</li>
+                            <li>Crear toda clase de comisiones, ramas, sucursales, filiales, anexos, oficinas y
+                                departamentos que se estime necesario para el mejor funcionamiento de la Corporación;
+                            </li>
+                            <li>Redactar los Reglamentos necesarios para la Corporación y las ramas y organismos que se
+                                creen, para el cumplimiento de sus fines, y someter dichos Reglamentos a la aprobación
+                                de la Asamblea General más próxima, pudiendo en el intertanto aplicarlos en forma
+                                provisoria, como asimismo realizar todos aquellos asuntos y negocios que estime
+                                necesario;</li>
+                            <li>Rendir cuenta en la Asamblea General Ordinaria anual, tanto de la marcha de la
+                                Corporación como la inversión de sus fondos, mediante memoria, balance e inventario, que
+                                en esa ocasión se someterán a la aprobación de sus socios;</li>
+                            <li>Calificar la ausencia e imposibilidad de sus miembros para desempeñar el cargo, a que se
+                                refiere el artículo vigésimo noveno de estos Estatutos;</li>
+                            <li>Remitir periódicamente memoria y balance al Ministerio de Justicia, conforme a la
+                                legislación vigente;</li>
+                            <li>Resolver las dudas y controversias que surjan con motivo de la aplicación de sus
+                                Estatutos y Reglamentos, dando cuenta a la Asamblea General más próxima;</li>
+                            <li>Las demás atribuciones que señalen estos Estatutos y la legislación vigente.</li>
+                        </ol>
+
+                        <h3>Artículo trigésimo quinto:</h3>
+                        <p>Como administrador de los bienes sociales el Directorio estará facultado para comprar,
+                            adquirir, vender, permutar, dar y tomar en arrendamiento y administración, ceder y
+                            transferir todo clase de bienes muebles y valores mobiliarios; dar y tomar en arrendamiento
+                            bienes inmuebles por un período no superior a tres años; constituir, aceptar, posponer y
+                            cancelar hipotecas, prendas, garantías y prohibiciones, otorgar cancelaciones, recibos y
+                            finiquitos; celebrar contratos de trabajo, fijar sus condiciones y poner término a ellos;
+                            celebrar contrato de mutuo y cuentas corrientes, abrir y cerrar cuentas corrientes, de
+                            depósitos, de ahorro y de créditos, girar y sobregirar en ellas; retirar talonarios y
+                            aprobar saldos; girar, aceptar, tomar, avalar, endosar, descontar, cobrar, cancelar,
+                            prorrogar y protestar letras de cambio, pagarés, cheques y demás documentos negociables o
+                            efectos de comercio; ejecutar todo tipo de operaciones bancarias o mercantiles; cobrar y
+                            percibir cuanto corresponda a la Corporación; contratar, alzar y posponer prendas,
+                            constituir, modificar, prorrogar, disolver y liquidar sociedades y comunidades, asistir a
+                            juntas con derecho a voz y voto; conferir y revocar poderes, mandatos especiales y
+                            transigir; aceptar toda clase de herencias, legados y donaciones; contratar seguros, pagar
+                            las primas, aprobar liquidaciones de los siniestros y percibir el valor de las pólizas,
+                            firmar, endosar y cancelar pólizas; importar y exportar; delegar sus atribuciones en uno o
+                            más socios o funcionarios de la Institución, sólo en lo que diga relación con la gestión
+                            económica de la Corporación o su organización administrativa interna; estipular en cada
+                            contrato que celebre los precios, plazos y condiciones que juzgue convenientes; anular,
+                            rescindir, resolver, revocar y terminar dichos contratos; poner término a los contratos
+                            vigentes por resolución, desahucio o cualquier otra forma; operar en el mercado de valores;
+                            comprar y vender divisas sin restricción; contratar créditos con fines sociales y ejecutar
+                            aquellos actos que tiendan a la buena administración de la Corporación.-</p>
+                        <p>Sólo por acuerdo de una Asamblea General Extraordinaria de socios se podrá comprar, vender,
+                            hipotecar, permutar, ceder y transferir bienes raíces, constituir servidumbres y
+                            prohibiciones de gravar y enajenar y arrendar bienes inmuebles por un plazo superior a tres
+                            años.</p>
+
+                        <h3>Artículo trigésimo sexto:</h3>
+                        <p>Acordado por el Directorio o la Asamblea General, en su caso, cualquier acto relacionado con
+                            las facultades indicadas en el artículo precedente, lo llevará a cabo el Presidente o quien
+                            lo subrogue en el cargo, conjuntamente con el Tesorero u otro miembro del Directorio que
+                            éste designe. Ellos deberán ceñirse fielmente a los términos del acuerdo de la Asamblea o
+                            del Directorio en su caso, y serán solidariamente responsables ante la Corporación en caso
+                            de contravenirlo. Sin embargo, no será necesario a los terceros que contraten con la
+                            Corporación conocer los términos del acuerdo.</p>
+
+                        <h2>TÍTULO SEXTO<br>DEL PRESIDENTE</h2>
+
+                        <h3>Artículo trigésimo séptimo:</h3>
+                        <p>Corresponde especialmente al Presidente de la Corporación:</p>
+                        <ol type="a">
+                            <li>Representar judicial y extrajudicialmente a la Corporación;</li>
+                            <li>Presidir las reuniones del Directorio y las Asambleas Generales de Socios;</li>
+                            <li>Ejecutar los acuerdos del Directorio, sin perjuicio de las funciones que los Estatutos
+                                encomienden al Vicepresidente, Secretario, Tesorero y a otros miembros que el Directorio
+                                designe;</li>
+                            <li>Organizar los trabajos del Directorio y proponer el plan general de actividades de la
+                                Institución;</li>
+                            <li>Nombrar las comisiones de trabajo que estime convenientes;</li>
+                            <li>Firmar la documentación propia de su cargo y aquella en que deba representar a la
+                                Corporación;</li>
+                            <li>Firmar conjuntamente con el Tesorero o con el Director que haya designado el Directorio,
+                                los cheques, giros de dinero, letras de cambio, balances y, en general, todos los
+                                documentos relacionados con el movimiento de fondos de la Corporación;</li>
+                            <li>Dar cuenta anualmente en la Asamblea General Ordinaria de socios en nombre del
+                                Directorio, de la marcha de la Corporación y del estado financiero de la misma;</li>
+                            <li>Resolver cualquier asunto urgente que se presente y solicitar en la sesión de Directorio
+                                más próxima, su ratificación;</li>
+                            <li>Velar por el cumplimiento de los Estatutos, Reglamentos y acuerdos de la Corporación;
+                            </li>
+                            <li>Las demás atribuciones que determinen estos Estatutos y los Reglamentos.</li>
+                        </ol>
+                        <p>Los actos del representante de la Corporación, son actos de ésta, en cuanto no excedan de los
+                            límites del ministerio que se le ha confiado; en caso contrario, sólo obligan personalmente
+                            al representante.</p>
+
+                        <h2>TÍTULO SÉPTIMO<br>DEL SECRETARIO Y DEL TESORERO</h2>
+
+                        <h3>Artículo trigésimo octavo:</h3>
+                        <p>Los deberes del Secretario serán los siguientes:</p>
+                        <ol type="a">
+                            <li>Llevar el Libro o Registro de Actas del Directorio y el de la Asamblea General;</li>
+                            <li>Custodiar y mantener el Registro de los Socios, Directores y demás cargos que prevean
+                                los Estatutos, garantizando que los datos sensibles incluidos en las respectivas
+                                solicitudes de ingreso, fichas de afiliación y/o registros de datos personales no sean
+                                cedidos ni revelados a terceros ni a otros socios, salvo autorización expresa del socio
+                                con respecto a sus propios datos o cuando sea imprescindible para efectuar una
+                                verificación de identidad por parte del Directorio;</li>
+                            <li>Despachar las citaciones a Asambleas de socios ordinaria y extraordinaria y publicar los
+                                avisos de citación de las mismas;</li>
+                            <li>Formar la tabla de sesiones del Directorio y de las Asambleas Generales, de acuerdo con
+                                el Presidente;</li>
+                            <li>Redactar y despachar con su firma y la del Presidente la correspondencia y documentación
+                                de la Corporación, con excepción de aquella que corresponda exclusivamente al Presidente
+                                y recibir y despachar la correspondencia en general. Contestar personalmente la
+                                correspondencia de mero trámite;</li>
+                            <li>Firmar las actas en calidad de Ministro de Fe de la Corporación y otorgar copia de ellas
+                                debidamente autorizadas con su firma, cuando se lo solicite algún socio;</li>
+                            <li>Calificar los poderes antes de las elecciones;</li>
+                            <li>En general, cumplir todas las tareas que le encomiende el Directorio o la Asamblea.</li>
+                        </ol>
+                        <p>En caso de ausencia o imposibilidad temporal, el Secretario será subrogado por el miembro del
+                            Directorio que éste último designe.</p>
+
+                        <h3>Artículo trigésimo noveno:</h3>
+                        <p>Las funciones del Tesorero serán las siguientes:</p>
+                        <ol type="a">
+                            <li>Cobrar y recibir las cuotas ordinarias, extraordinarias y de incorporación de los
+                                socios, otorgando recibos por las cantidades correspondientes;</li>
+                            <li>Informar periódicamente al Directorio y al Tribunal de Honor de los socios morosos en
+                                sus obligaciones pecuniarias para con la Corporación;</li>
+                            <li>Depositar los fondos de la Corporación en las cuentas corrientes o de ahorro que ésta
+                                abra o mantenga, y firmar conjuntamente con el Presidente, o con quien designe el
+                                Directorio los cheques o retiros de dineros que se giren contra dichas cuentas;</li>
+                            <li>Llevar la contabilidad de la Corporación, de conformidad con los principios de
+                                contabilidad de aceptación general;</li>
+                            <li>Preparar el Balance que el Directorio deberá proponer anualmente a la Asamblea General;
+                            </li>
+                            <li>Mantener al día el inventario de todos los bienes de la Corporación;</li>
+                            <li>En general, cumplir con todas las tareas que le encomiende el Directorio o la Asamblea.
+                            </li>
+                        </ol>
+                        <p>El Tesorero, en caso de ausencia, o imposibilidad temporal, será subrogado por el miembro del
+                            Directorio que éste último designe.</p>
+
+                        <h2>TÍTULO OCTAVO<br>DEL TRIBUNAL DE HONOR</h2>
+
+                        <h3>Artículo cuadragésimo:</h3>
+                        <p>Habrá un Tribunal de Honor compuesto de tres socios, elegidos cada dos años en la Asamblea
+                            General Ordinaria Anual en la forma y con los requisitos establecidos en el artículo
+                            vigésimo octavo, a través del cual la Corporación ejercerá la potestad disciplinaria que le
+                            corresponde sobre sus socios.</p>
+                        <p>Los miembros del Tribunal de Honor durarán dos años en sus funciones y podrán ser reelegidos
+                            por un máximo de dos periodos consecutivos.</p>
+                        <p>El Tribunal de Honor tendrá las facultades disciplinarias respecto de los integrantes de la
+                            Corporación, las que ejercerá mediante un procedimiento racional y justo. En el cumplimiento
+                            de sus funciones el Tribunal sólo podrá aplicar las sanciones que establece el artículo
+                            décimo sexto de estos Estatutos, y estará facultado para redactar un Reglamento que fije las
+                            normas de procedimiento que fueren necesarias para estos efectos, que deberá ser sometido a
+                            la aprobación de la Asamblea General.</p>
+
+                        <h3>Artículo cuadragésimo primero:</h3>
+                        <p>El Tribunal de Honor se constituirá dentro de los treinta días siguientes a su elección,
+                            procediendo a designar, de entre sus miembros, un Presidente. Deberá sesionar con la mayoría
+                            absoluta de sus miembros y sus acuerdos se tomarán por la mayoría absoluta de sus
+                            integrantes. En caso de empate, decidirá el voto del que preside.</p>
+                        <p>Las sesiones podrán efectuarse por medios remotos. Todas las resoluciones y acuerdos del
+                            Tribunal deberán constar por escrito y los suscribirán todos los miembros asistentes a la
+                            respectiva sesión. La suscripción podrá ser manuscrita o con firma electrónica avanzada.</p>
+                        <p>En caso de fallecimiento, inhabilidad, renuncia, destitución, ausencia o imposibilidad
+                            absoluta de alguno de los miembros del Tribunal de Honor para el desempeño de su cargo, el
+                            Directorio nombrará un reemplazante que durará en sus funciones el tiempo que reste para
+                            completar el período del miembro del Tribunal reemplazado. El tiempo de la ausencia o
+                            imposibilidad será de tres meses contados desde la primera sesión a la que el integrante del
+                            Tribunal no concurrieran.</p>
+
+                        <h2>TÍTULO NOVENO<br>DE LA MODIFICACIÓN DE LOS ESTATUTOS</h2>
+
+                        <h3>Artículo cuadragésimo segundo:</h3>
+                        <p>La reforma a los Estatutos podrá ser solicitada:</p>
+                        <ol type="a">
+                            <li>Por acuerdo del Directorio, aprobado por los dos tercios de sus miembros;</li>
+                            <li>Por petición escrita de la cuarta parte de los socios activos.</li>
+                        </ol>
+
+                        <h3>Artículo cuadragésimo tercero:</h3>
+                        <p>La modificación de los Estatutos será acordada en Asamblea General Extraordinaria por los dos
+                            tercios de los socios activos presentes.</p>
+                        <p>La Asamblea deberá celebrarse con asistencia de un Notario, oficial del Registro Civil o
+                            funcionario municipal autorizado por el alcalde, que certifique el hecho de haberse cumplido
+                            con todas las formalidades que establecen estos Estatutos para su reforma.</p>
+
+                        <h2>TÍTULO DÉCIMO<br>DE LA DISOLUCIÓN DE LA CORPORACIÓN</h2>
+
+                        <h3>Artículo cuadragésimo tercero:</h3>
+                        <p>La Corporación podrá disolverse voluntariamente por acuerdo de una Asamblea General
+                            Extraordinaria adoptada por los dos tercios de los socios activos presentes, con las mismas
+                            formalidades establecidas en el artículo precedente.</p>
+                        <p>Aprobada la disolución forzada de la Corporación, sus bienes pasarán a la Institución, sin
+                            fin de lucro, con personalidad jurídica vigente, denominada “Organización No Gubernamental
+                            de Desarrollo, Defensa y Promoción de los Derechos Humanos en el Entorno Digital”, también
+                            llamada “O.N.G. Derechos Digitales”, con personalidad jurídica otorgada por el Decreto
+                            número dos mil treinta exento, del Ministerio de Justicia, de fecha trece de junio de dos
+                            mil cinco, publicado en el Diario Oficial de fecha dieciocho de julio de dos mil cinco, con
+                            domicilio en calle Diagonal Paraguay número cuatrocientos cincuenta y ocho, piso dos, comuna
+                            de Santiago.-</p>
+
+                        <h2>TÍTULO UNDÉCIMO<br>COMUNICACIÓN DE LA CORPORACIÓN CON SUS SOCIOS.</h2>
+
+                        <h3>Artículo Cuadragésimo Cuarto:</h3>
+                        <p>Toda comunicación que se necesite realizar entre la Corporación y los miembros asociados se
+                            realizará por medio de correo electrónico enviado a la casilla de correo designada por cada
+                            socio para el efecto. Toda comunicación se entenderá como notificada al tercer día hábil de
+                            despacho del correo electrónico.</p>
+                        <p>El Directorio será responsable de mantener un registro de las casillas electrónicas de cada
+                            miembro asociado. Cada socio es responsable de mantener actualizada la casilla de correo
+                            electrónico que designe para efectos de comunicaciones para con la Corporación.</p>
+
+                        <h2>DISPOSICIONES TRANSITORIAS</h2>
+
+                        <blockquote>
+                            <h3>Artículo Primero transitorio:</h3>
+                            <p>Durante los dos dos primeros años de vigencia de la Corporación, no se exigirá para ser
+                                Director, el requisito de antigüedad prescrito en el artículo trigésimo de estos
+                                Estatutos.</p>
+                        </blockquote>
+                        <blockquote>
+                            <h3>Artículo Segundo transitorio:</h3>
+                            <p>Todos los procesos de admisión a la Corporación se regirán por el estatuto vigente a la
+                                fecha en que el aspirante presentó su solicitud de admisión.</p>
+                        </blockquote>
+                        <blockquote>
+                            <h3>Artículo Tercero transitorio:</h3>
+                            <p>Todos los procedimientos y denuncias que tramitan ante el Tribunal de Honor, se
+                                sustentarán en base al estatuto vigente a la fecha en que se inició hasta su conclusión.
+                            </p>
+                        </blockquote>
+                        <blockquote>
+                            <h3>Artículo Cuarto transitorio:</h3>
+                            <p>Todos los socios activos vigentes a la fecha de entrada en vigencia de la actual
+                                modificación de estatutos deberán dar cumplimiento a los requisitos establecidos por
+                                este dentro de un plazo de treinta días.</p>
+                        </blockquote>
+                        <blockquote>
+                            <h3>Artículo Quinto transitorio:</h3>
+                            <p>La presente modificación de estatuto empezará a regir a contar de los treinta días
+                                corridos siguientes de ser aprobada por la Secretaría Municipal de la comuna de
+                                Santiago.</p>
+                            <p>Tanto el Directorio como el Tribunal de Honor que estuvieren vigentes a esa fecha, se
+                                mantendrán en funciones y deberán llamar a Asamblea General de Socios, dentro del plazo
+                                de un año, contado desde la entrada en vigencia de la presente modificación de estatuto,
+                                para que se elija un nuevo directorio y un nuevo Tribunal de Honor.</p>
+                            <p>Mientras no se elija un nuevo Directorio y un nuevo Tribunal de Honor, ambos órganos
+                                funcionarán siguiendo las normas que el Estatuto originario dispone para su
+                                funcionamiento.</p>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-900 text-gray-300 pt-16 pb-8">
+        <div class="container mx-auto px-4 lg:px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+
+                <div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <img src="/wikimedia chile logo.png" alt="Wikimedia Chile Logo" class="h-9 w-auto"
+                            onerror="this.onerror=null;this.src='https://placehold.co/120x36/fff/333?text=WM+Chile';">
+                    </div>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        Promoviendo el conocimiento libre y la cultura abierta en Chile como el capítulo local de la
+                        Fundación Wikimedia.
+                    </p>
+                </div>
+
+                <div>
+                    <h5 class="text-base font-semibold text-white mb-4">Navegación</h5>
+                    <ul class="space-y-3">
+                        <li><a href="sobre-nosotros.html" class="text-sm hover:text-white transition-colors">Sobre
+                                Nosotros</a></li>
+                        <li><a href="programas.html" class="text-sm hover:text-white transition-colors">Programas</a>
+                        </li>
+                        <li><a href="noticias.html" class="text-sm hover:text-white transition-colors">Noticias</a></li>
+                        <li><a href="agenda.html" class="text-sm hover:text-white transition-colors">Agenda</a></li>
+                        <li><a href="hazte-socio.html" class="text-sm hover:text-white transition-colors">Hazte
+                                Socio/a</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="text-base font-semibold text-white mb-4">Enlaces Útiles</h5>
+                    <ul class="space-y-3">
+                        <li><a href="memorias.html" class="text-sm hover:text-white transition-colors">Memorias
+                                Anuales</a></li>
+                        <li><a href="transparencia.html"
+                                class="text-sm hover:text-white transition-colors">Transparencia</a></li>
+                        <li><a href="estatutos.html" class="text-sm hover:text-white transition-colors">Estatutos</a>
+                        </li>
+                        <li><a href="privacidad.html" class="text-sm hover:text-white transition-colors">Políticas de
+                                Privacidad</a></li>
+                        <li><a href="contacto.html" class="text-sm hover:text-white transition-colors">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div id="footer-subscribe">
+                    <h5 class="text-base font-semibold text-white mb-4">Conéctate</h5>
+                    <div class="flex gap-4 mb-6">
+                        <a href="https://www.instagram.com/wikimedia_cl/" target="_blank"
+                            class="text-gray-400 hover:text-white transition-colors" aria-label="Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                        <a href="https://www.facebook.com/WikimediaCL/?locale=es_LA" target="_blank"
+                            class="text-gray-400 hover:text-white transition-colors" aria-label="Facebook">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                        </a>
+                        <a href="https://www.linkedin.com/company/wikimedia-chile/posts/?feedView=all" target="_blank"
+                            class="text-gray-400 hover:text-white transition-colors" aria-label="LinkedIn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                </path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </a>
+                    </div>
+                    <h5 class="text-base font-semibold text-white mb-4 mt-8">Suscríbete</h5>
+                    <form class="flex gap-2">
+                        <input type="email"
+                            class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-sm text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            placeholder="tu.correo@ejemplo.com" aria-label="Correo electrónico para suscripción">
+                        <button type="submit"
+                            class="text-white font-medium rounded-lg text-sm px-4 py-2 transition-colors"
+                            style="background-color: #5748b5; hover:background-color: #4a3f9a;"
+                            aria-label="Suscribirse">
+                            &rarr;
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <hr class="border-gray-700 my-8">
+
+            <div class="flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
+                <p>&copy; 2024 Wikimedia Chile. Todos los derechos reservados.</p>
+                <p class="mt-4 md:mt-0">
+                    El contenido está disponible bajo <a href="#" class="hover:text-white underline">CC BY-SA 4.0</a>
+                    salvo que se indique lo contrario.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const darkLogo = '/wikiemdia foundation logo.webp';
+
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const closeMobileMenuButton = document.getElementById('close-mobile-menu');
+
+            const searchModal = document.getElementById('search-modal');
+            const openSearchButtons = [
+                document.getElementById('search-button-desktop'),
+                document.getElementById('search-button-mobile')
+            ];
+            const closeSearchButton = document.getElementById('close-search-modal');
+            const searchInput = document.getElementById('search-input');
+
+            const header = document.getElementById('main-header');
+            const headerLogo = document.getElementById('header-logo');
+
+            // Esta página siempre tiene el header "scrolled"
+            if (header) {
+                header.classList.add('header-scrolled');
+                if (headerLogo) {
+                    headerLogo.src = darkLogo;
+                }
+            }
+
+            // Lógica para el menú móvil
+            if (mobileMenuButton && mobileMenu && closeMobileMenuButton) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.remove('hidden');
+                });
+
+                closeMobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            }
+
+            // Lógica para el modal de búsqueda
+            if (searchModal && closeSearchButton && openSearchButtons.length > 0) {
+
+                function openSearch() {
+                    searchModal.classList.remove('hidden');
+                    setTimeout(() => searchInput.focus(), 100);
+                }
+
+                function closeSearch() {
+                    searchModal.classList.add('hidden');
+                }
+
+                openSearchButtons.forEach(btn => {
+                    if (btn) btn.addEventListener('click', openSearch);
+                });
+
+                closeSearchButton.addEventListener('click', closeSearch);
+
+                searchModal.addEventListener('click', (e) => {
+                    if (e.target === searchModal) {
+                        closeSearch();
+                    }
+                });
+
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && !searchModal.classList.contains('hidden')) {
+                        closeSearch();
+                    }
+                });
+            }
+
+        });
+    </script>
+
+</body>
+
+</html>
